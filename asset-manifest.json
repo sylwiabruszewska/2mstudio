@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/2mstudio/static/css/main.1ac7dac6.css",
-    "main.js": "/2mstudio/static/js/main.85ab3f1a.js",
+    "main.js": "/2mstudio/static/js/main.5a1cf0dc.js",
     "static/css/156.e287593c.chunk.css": "/2mstudio/static/css/156.e287593c.chunk.css",
     "static/js/156.72445f80.chunk.js": "/2mstudio/static/js/156.72445f80.chunk.js",
     "static/css/285.12fd4172.chunk.css": "/2mstudio/static/css/285.12fd4172.chunk.css",
@@ -26,7 +26,7 @@
     "static/js/787.c36de2e9.chunk.js": "/2mstudio/static/js/787.c36de2e9.chunk.js",
     "static/js/270.e602d764.chunk.js": "/2mstudio/static/js/270.e602d764.chunk.js",
     "static/js/294.ce9eb2f0.chunk.js": "/2mstudio/static/js/294.ce9eb2f0.chunk.js",
-    "static/js/658.cf43de8b.chunk.js": "/2mstudio/static/js/658.cf43de8b.chunk.js",
+    "static/js/658.29bbc8ec.chunk.js": "/2mstudio/static/js/658.29bbc8ec.chunk.js",
     "static/media/hero.jpg": "/2mstudio/static/media/hero.20ab65f7f07ce70a30c4.jpg",
     "static/media/stage.jpg": "/2mstudio/static/media/stage.ec54fbca5feb7d5270bb.jpg",
     "static/media/interior1.jpg": "/2mstudio/static/media/interior1.9bb79bf72288cc0884ce.jpg",
@@ -41,7 +41,7 @@
     "static/media/revicons.woff": "/2mstudio/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/2mstudio/index.html",
     "main.1ac7dac6.css.map": "/2mstudio/static/css/main.1ac7dac6.css.map",
-    "main.85ab3f1a.js.map": "/2mstudio/static/js/main.85ab3f1a.js.map",
+    "main.5a1cf0dc.js.map": "/2mstudio/static/js/main.5a1cf0dc.js.map",
     "156.e287593c.chunk.css.map": "/2mstudio/static/css/156.e287593c.chunk.css.map",
     "156.72445f80.chunk.js.map": "/2mstudio/static/js/156.72445f80.chunk.js.map",
     "285.12fd4172.chunk.css.map": "/2mstudio/static/css/285.12fd4172.chunk.css.map",
@@ -66,10 +66,10 @@
     "787.c36de2e9.chunk.js.map": "/2mstudio/static/js/787.c36de2e9.chunk.js.map",
     "270.e602d764.chunk.js.map": "/2mstudio/static/js/270.e602d764.chunk.js.map",
     "294.ce9eb2f0.chunk.js.map": "/2mstudio/static/js/294.ce9eb2f0.chunk.js.map",
-    "658.cf43de8b.chunk.js.map": "/2mstudio/static/js/658.cf43de8b.chunk.js.map"
+    "658.29bbc8ec.chunk.js.map": "/2mstudio/static/js/658.29bbc8ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1ac7dac6.css",
-    "static/js/main.85ab3f1a.js"
+    "static/js/main.5a1cf0dc.js"
   ]
 }
