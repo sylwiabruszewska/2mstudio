@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/2mstudio/static/css/main.1ac7dac6.css",
-    "main.js": "/2mstudio/static/js/main.5a1cf0dc.js",
+    "main.js": "/2mstudio/static/js/main.f8786848.js",
     "static/css/156.e287593c.chunk.css": "/2mstudio/static/css/156.e287593c.chunk.css",
     "static/js/156.72445f80.chunk.js": "/2mstudio/static/js/156.72445f80.chunk.js",
     "static/css/285.12fd4172.chunk.css": "/2mstudio/static/css/285.12fd4172.chunk.css",
     "static/js/285.c55e5302.chunk.js": "/2mstudio/static/js/285.c55e5302.chunk.js",
-    "static/css/99.ed258093.chunk.css": "/2mstudio/static/css/99.ed258093.chunk.css",
+    "static/css/99.6459b6a4.chunk.css": "/2mstudio/static/css/99.6459b6a4.chunk.css",
     "static/js/99.23ea436e.chunk.js": "/2mstudio/static/js/99.23ea436e.chunk.js",
     "static/css/913.7df9dd1e.chunk.css": "/2mstudio/static/css/913.7df9dd1e.chunk.css",
     "static/js/913.2158f6fe.chunk.js": "/2mstudio/static/js/913.2158f6fe.chunk.js",
@@ -41,12 +41,12 @@
     "static/media/revicons.woff": "/2mstudio/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/2mstudio/index.html",
     "main.1ac7dac6.css.map": "/2mstudio/static/css/main.1ac7dac6.css.map",
-    "main.5a1cf0dc.js.map": "/2mstudio/static/js/main.5a1cf0dc.js.map",
+    "main.f8786848.js.map": "/2mstudio/static/js/main.f8786848.js.map",
     "156.e287593c.chunk.css.map": "/2mstudio/static/css/156.e287593c.chunk.css.map",
     "156.72445f80.chunk.js.map": "/2mstudio/static/js/156.72445f80.chunk.js.map",
     "285.12fd4172.chunk.css.map": "/2mstudio/static/css/285.12fd4172.chunk.css.map",
     "285.c55e5302.chunk.js.map": "/2mstudio/static/js/285.c55e5302.chunk.js.map",
-    "99.ed258093.chunk.css.map": "/2mstudio/static/css/99.ed258093.chunk.css.map",
+    "99.6459b6a4.chunk.css.map": "/2mstudio/static/css/99.6459b6a4.chunk.css.map",
     "99.23ea436e.chunk.js.map": "/2mstudio/static/js/99.23ea436e.chunk.js.map",
     "913.7df9dd1e.chunk.css.map": "/2mstudio/static/css/913.7df9dd1e.chunk.css.map",
     "913.2158f6fe.chunk.js.map": "/2mstudio/static/js/913.2158f6fe.chunk.js.map",
@@ -70,6 +70,6 @@
   },
   "entrypoints": [
     "static/css/main.1ac7dac6.css",
-    "static/js/main.5a1cf0dc.js"
+    "static/js/main.f8786848.js"
   ]
 }
