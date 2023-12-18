@@ -26,7 +26,7 @@ const AboutUsPage = () => {
     };
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
