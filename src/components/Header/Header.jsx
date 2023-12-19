@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { StyledLink } from './Header.styled';
 import styles from './Header.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { Container } from 'components';
 
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -19,7 +20,7 @@ export const Header = () => {
   };
 
   return (
-    <div className={styles['page-header']}>
+    <Container className={styles['page-header']}>
       <Link to="/" aria-label="strona główna">
         <Logo className={styles['logo']} />
       </Link>
@@ -86,6 +87,6 @@ export const Header = () => {
           </StyledLink>
         </div>
       )}
-    </div>
+    </Container>
   );
 };
