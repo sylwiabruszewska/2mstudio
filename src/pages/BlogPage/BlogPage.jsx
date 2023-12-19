@@ -65,9 +65,10 @@ const BlogPage = () => {
   };
 
   useEffect(() => {
-    getImages(posts, featuredImages, setFeaturedImages, getImages);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [posts]);
+    if (posts && posts.length > 0) {
+      getImages(posts, featuredImages, setFeaturedImages);
+    }
+  }, [posts, featuredImages]);
 
   return (
     <>
