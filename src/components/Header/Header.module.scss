@@ -25,6 +25,15 @@
   }
 }
 
+.box {
+  @include mixins.flex(center, center);
+  gap: 1rem;
+
+  @include mixins.mq(tablet) {
+    gap: 4rem;
+  }
+}
+
 .nav {
   display: none;
 
@@ -41,13 +50,17 @@
 }
 
 .menu-toggle {
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
   border: none;
   background-color: transparent;
 
   @include mixins.mq(tablet) {
     display: none;
+  }
+
+  &__icon {
+    @include mixins.flex(center, center);
   }
 }
 
@@ -72,4 +85,30 @@
   border: none;
   background-color: transparent;
   font-size: 3rem;
+}
+
+////////// SOCIAL LINKS LIST //////////
+.list {
+  @include mixins.flex(center, flex-start);
+  gap: 1rem;
+
+  @include mixins.mq(tablet) {
+    gap: 2rem;
+  }
+}
+
+.social-links {
+  @extend .list;
+
+  &__link {
+    @include mixins.flex(center, center);
+
+    color: variables.get-color('dark');
+    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }

@@ -8,6 +8,9 @@ import { Container } from 'components';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
+import { BsFacebook } from 'react-icons/bs';
+import { FaInstagram } from 'react-icons/fa';
+
 import { setIsMobileMenuOpen } from '../../redux/global/globalSlice';
 import { selectIsMobileMenuOpen } from '../../redux/global/selectors';
 
@@ -25,33 +28,57 @@ export const Header = () => {
         <Logo className={styles['logo']} />
       </Link>
 
-      <nav className={styles['nav']}>
-        <StyledLink to="/" aria-label="strona główna">
-          Home
-        </StyledLink>
-        <StyledLink to="/blog" aria-label="blog">
-          Blog
-        </StyledLink>
-        <StyledLink to="/projekty/wnetrza" aria-label="projekty">
-          Projekty
-        </StyledLink>
-        <StyledLink to="/o-nas" aria-label="o nas">
-          O nas
-        </StyledLink>
-        <StyledLink to="/kontakt" aria-label="kontakt">
-          Kontakt
-        </StyledLink>
-      </nav>
+      <div className={styles['box']}>
+        <nav className={styles['nav']}>
+          <StyledLink to="/blog" aria-label="blog">
+            Blog
+          </StyledLink>
+          <StyledLink to="/projekty/wnetrza" aria-label="projekty">
+            Projekty
+          </StyledLink>
+          <StyledLink to="/o-nas" aria-label="o nas">
+            O nas
+          </StyledLink>
+          <StyledLink to="/kontakt" aria-label="kontakt">
+            Kontakt
+          </StyledLink>
+        </nav>
 
-      {/* MENU MOBILE */}
-      <button
-        className={styles['menu-toggle']}
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        onClick={toggleMobileMenu}
-      >
-        <AiOutlineMenu />
-      </button>
+        <ul className={styles['social-links']}>
+          <li>
+            <a
+              className={styles['social-links__link']}
+              href="https://www.facebook.com/2mstudiopracowniaprojektowa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otwórz mój profil na Facebooku"
+            >
+              <BsFacebook />
+            </a>
+          </li>
+          <li>
+            <a
+              className={styles['social-links__link']}
+              href="https://www.instagram.com/2mstudiopracownia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otwórz mój profil na Instagramie"
+            >
+              <FaInstagram />
+            </a>
+          </li>
+        </ul>
+
+        {/* MENU MOBILE */}
+        <button
+          className={styles['menu-toggle']}
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          onClick={toggleMobileMenu}
+        >
+          <AiOutlineMenu className={styles['menu-toggle__icon']} />
+        </button>
+      </div>
 
       {isMobileMenuVisible && (
         <div className={styles['mobile-menu']}>

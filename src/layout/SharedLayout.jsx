@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 import styles from './SharedLayout.module.scss';
-import { Bar, Header, Footer, Loader } from 'components';
+import { Header, Footer, Loader } from 'components';
 import { selectIsLoading } from '../redux/global/selectors';
 
 export const SharedLayout = () => {
@@ -29,7 +29,6 @@ export const SharedLayout = () => {
       {isLoading && <Loader />}
       <div className={styles['wrapper']}>
         <header>
-          <Bar />
           <Header />
         </header>
         <main className={styles['page-main']}>
