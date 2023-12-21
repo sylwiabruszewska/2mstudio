@@ -45,6 +45,7 @@
 
   @include mixins.mq(tablet) {
     @include mixins.flex(flex-start, flex-start);
+    max-width: 50%;
   }
 }
 
