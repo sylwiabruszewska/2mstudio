@@ -68,10 +68,7 @@ const Home = () => {
         </Container>
       </Section>
 
-      <Section
-        title="Jak powstaje projekt?"
-        className={styles['stages-section']}
-      >
+      <Section title="Co nas wyróżnia?" className={styles['stages-section']}>
         <div className={styles['stages-bg']}></div>
         <Container className={styles['center']}>
           <ListStages />
@@ -79,9 +76,9 @@ const Home = () => {
           <Button
             type="button"
             className={styles.center}
-            onClick={() => navigate('/kontakt')}
+            onClick={() => navigate('/oferta')}
           >
-            Skontaktuj się z nami
+            Poznaj szczegóły
           </Button>
         </Container>
       </Section>
