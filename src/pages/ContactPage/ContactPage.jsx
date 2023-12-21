@@ -15,10 +15,7 @@ const ContactPage = () => {
         <Container>
           <div className={styles['contact__container']}>
             <div className={styles['contact__box']}>
-              <div>
-                <p>W razie pytań skontaktuj się z nami!</p>
-                <Address />
-              </div>
+              <Address />
             </div>
 
             <div className={styles['contact__box']}>

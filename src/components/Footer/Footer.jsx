@@ -4,7 +4,7 @@ import { Container, Address } from 'components';
 
 export const Footer = () => {
   return (
-    <div className={styles['footer__page']}>
+    <>
       <Container className={styles['footer__container']}>
         <div className={styles['box']}>
           <Logo className={styles['logo']} />
@@ -20,7 +20,7 @@ export const Footer = () => {
       </Container>
       <Container>
         <div className={styles['copyright']}>
-          Copyright © 2023 2m Studio Pracownia Projektowa |{' '}
+          Copyright © 2023 2m Studio Pracownia Projektowa |
           <a
             href="https://sylwia-bruszewska.netlify.app"
             target="_blank"
@@ -30,6 +30,6 @@ export const Footer = () => {
           </a>
         </div>
       </Container>
-    </div>
+    </>
   );
 };

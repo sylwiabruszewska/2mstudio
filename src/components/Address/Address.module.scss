@@ -1,6 +1,15 @@
 @use 'styles/utils/mixins';
 @use 'styles/utils/variables';
 
+.address__list {
+  @include mixins.flex(flex-start, center);
+  flex-direction: column;
+
+  @include mixins.mq(tablet) {
+    align-items: flex-start;
+  }
+}
+
 .address__item:not(:last-child) {
   margin-bottom: 10px;
 }

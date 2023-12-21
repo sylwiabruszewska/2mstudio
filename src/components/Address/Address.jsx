@@ -7,7 +7,7 @@ import styles from './Address.module.scss';
 export const Address = () => {
   return (
     <address>
-      <ul>
+      <ul className={styles['address__list']}>
         <li className={styles['address__item']}>
           <div className={styles['list__content']}>
             <FaPhoneAlt className={styles.icon} />
