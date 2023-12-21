@@ -11,8 +11,8 @@ export const Address = () => {
         <li className={styles['address__item']}>
           <div className={styles['list__content']}>
             <FaPhoneAlt className={styles.icon} />
-            <a className={styles['address__link']} href="tel:+48604258222">
-              +48 604 258 222
+            <a className={styles['address__link']} href="tel:+48604310260">
+              +48 604 310 260
             </a>
           </div>
         </li>
