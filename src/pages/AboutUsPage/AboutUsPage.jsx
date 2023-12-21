@@ -36,6 +36,7 @@ const AboutUsPage = () => {
 
       <Section>
         <Container>
+          <img src="" className={styles['img']} alt="Nasz zespół" />
           <div className={styles['wrapper']}>
             <div className={styles['content']}>
               {data && parse(data.content.rendered)}
