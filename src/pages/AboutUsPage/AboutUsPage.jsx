@@ -31,7 +31,7 @@ const AboutUsPage = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa - Portfolio - O nas</title>
+        <title>2m Studio Pracownia Projektowa - O nas</title>
       </Helmet>
 
       <Section>

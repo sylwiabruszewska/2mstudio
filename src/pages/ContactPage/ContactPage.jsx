@@ -8,7 +8,7 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa - Portfolio - Kontakt</title>
+        <title>2m Studio Pracownia Projektowa - Kontakt</title>
       </Helmet>
 
       <Section>
