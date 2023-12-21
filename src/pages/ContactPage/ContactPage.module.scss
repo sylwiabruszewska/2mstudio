@@ -3,7 +3,6 @@
 
 .contact {
   &__container {
-    background-color: get-color('white');
     padding: 2rem;
 
     @include mixins.flex(center);

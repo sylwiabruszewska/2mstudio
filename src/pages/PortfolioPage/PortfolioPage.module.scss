@@ -37,7 +37,6 @@
   @include mixins.mq(tablet) {
     flex-direction: row;
     justify-content: center;
-    background-color: get-color('white');
   }
 }
 
