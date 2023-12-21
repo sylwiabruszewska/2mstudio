@@ -30,8 +30,8 @@ export const Header = () => {
 
       <div className={styles['box']}>
         <nav className={styles['nav']}>
-          <StyledLink to="/blog" aria-label="blog">
-            Blog
+          <StyledLink to="/aktualnosci" aria-label="aktualności">
+            Aktualności
           </StyledLink>
           <StyledLink to="/projekty/wnetrza" aria-label="projekty">
             Projekty

@@ -29,7 +29,7 @@ export const App = () => {
         <Route index element={<HomePage />} />
 
         {/* Pozostałe trasy */}
-        <Route path="blog" element={<BlogPage />} />
+        <Route path="aktualnosci" element={<BlogPage />} />
         <Route path="/:postId" element={<PostDetails />} />
 
         <Route path="projekty/" element={<PortfolioPage />}>
