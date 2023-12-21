@@ -20,14 +20,18 @@
   }
 
   &__heading {
-    font-size: 1rem;
-    font-weight: normal;
-    color: variables.get-color('gray');
-    font-weight: 600;
+    display: none;
+
+    @include mixins.mq(tablet) {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: variables.get-color('gray');
+      font-weight: 600;
+    }
   }
 
   &__text {
-    font-size: 1rem;
     font-weight: 700;
     color: variables.get-color('dark');
     margin-bottom: 0.4rem;

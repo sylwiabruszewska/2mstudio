@@ -56,9 +56,9 @@ const BuildingsResidential = () => {
                       />
                       <div className={styles['card__overlay']}>
                         <div className={styles['box']}>
-                          <p className={styles['card__title']}>
+                          <h3 className={styles['card__title']}>
                             {post.title.rendered}
-                          </p>
+                          </h3>
                         </div>
                       </div>
                     </div>
