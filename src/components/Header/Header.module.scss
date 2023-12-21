@@ -3,6 +3,7 @@
 
 .logo {
   height: 50px;
+  margin-top: 16px;
 
   @include mixins.mq(tablet) {
     height: 70px;
