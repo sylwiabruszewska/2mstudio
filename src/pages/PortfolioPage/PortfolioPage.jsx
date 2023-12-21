@@ -10,7 +10,7 @@ const PortfolioPage = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa - Portfolio</title>
+        <title>2M STUDIO Pracownia Projektowa - Portfolio</title>
       </Helmet>
 
       <Container>

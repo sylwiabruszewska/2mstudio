@@ -27,7 +27,7 @@ const PostDetails = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa</title>
+        <title>2M STUDIO Pracownia Projektowa</title>
       </Helmet>
 
       <Section>

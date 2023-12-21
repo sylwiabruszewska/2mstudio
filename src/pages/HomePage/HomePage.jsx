@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa</title>
+        <title>2M STUDIO Pracownia Projektowa</title>
       </Helmet>
 
       <Container type="full">
@@ -30,7 +30,7 @@ const Home = () => {
         <div className={styles['about']}>
           <div className={styles['about__text']}>
             <h1 className={styles['about__heading']}>
-              2m Studio Pracownia Projektowa
+              2M STUDIO Pracownia Projektowa
             </h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.

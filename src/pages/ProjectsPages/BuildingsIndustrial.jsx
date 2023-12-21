@@ -36,7 +36,7 @@ const BuildingsIndustrial = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa - Budynki przemysłowe</title>
+        <title>2M STUDIO Pracownia Projektowa - Budynki przemysłowe</title>
       </Helmet>
 
       <ul className={styles['gallery']}>

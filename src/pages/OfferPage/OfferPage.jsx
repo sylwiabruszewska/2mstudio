@@ -7,7 +7,7 @@ const OfferPage = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa - Oferta</title>
+        <title>2M STUDIO Pracownia Projektowa - Oferta</title>
       </Helmet>
 
       <Section>

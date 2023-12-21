@@ -1,1 +1,1 @@
-# 2m Studio Pracownia Projektowa
+# 2M STUDIO Pracownia Projektowa

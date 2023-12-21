@@ -20,7 +20,7 @@ export const Footer = () => {
       </Container>
       <Container>
         <div className={styles['copyright']}>
-          Copyright © 2023 2m Studio Pracownia Projektowa |
+          Copyright © 2023 2M STUDIO Pracownia Projektowa |
           <a
             href="https://sylwia-bruszewska.netlify.app"
             target="_blank"

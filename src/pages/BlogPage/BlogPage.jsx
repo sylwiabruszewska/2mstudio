@@ -73,7 +73,7 @@ const BlogPage = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa - Portfolio - Blog</title>
+        <title>2M STUDIO Pracownia Projektowa - Portfolio - Blog</title>
       </Helmet>
 
       <Section>
