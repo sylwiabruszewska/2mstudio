@@ -9,7 +9,10 @@ export const Footer = () => {
         <div className={styles['box']}>
           <Logo className={styles['logo']} />
           <h2 className={styles['footer__heading']}>
-            Architekt Białystok, Architektura, Projektowanie wnętrz
+            Architekt Białystok, architekt wnętrz Białystok, architektura,
+            projekt domu, projekt wnętrz, nowoczesna architektura, projektowanie
+            przestrzeni, projektowanie mieszkań, wnętrza designerskie, koncepcje
+            aranżacyjne, usługi projektowe Białystok
           </h2>
         </div>
 
