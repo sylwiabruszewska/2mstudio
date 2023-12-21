@@ -22,8 +22,8 @@ const Home = () => {
         <title>2M STUDIO Pracownia Projektowa</title>
       </Helmet>
 
-      <Container type="full">
-        <div className={styles['hero']}></div>
+      <Container>
+        <SliderPortfolio />
       </Container>
 
       <Container className={styles['about__container']}>
@@ -59,12 +59,6 @@ const Home = () => {
       <Section title=" ">
         <Container>
           <ListPros />
-        </Container>
-      </Section>
-
-      <Section title="Portfolio">
-        <Container type="full">
-          <SliderPortfolio />
         </Container>
       </Section>
 

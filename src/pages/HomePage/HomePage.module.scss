@@ -1,18 +1,6 @@
 @use 'styles/utils/mixins';
 @use 'styles/utils/variables';
 
-.hero {
-  background-image: url('/assets/images/hero.jpg');
-  height: 50vh;
-
-  @include mixins.mq(tablet) {
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 80vh;
-  }
-}
-
 ///// INTRO /////
 
 .about {
