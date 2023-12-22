@@ -30,6 +30,14 @@
   @include mixins.flex(center, center);
   gap: 1rem;
 
+  .social-links {
+    display: none;
+
+    @include mixins.mq(tablet) {
+      display: flex;
+    }
+  }
+
   @include mixins.mq(tablet) {
     gap: 4rem;
   }
@@ -49,6 +57,8 @@
     margin: 0;
   }
 }
+
+////////// MOBILE MENU //////////
 
 .menu-toggle {
   font-size: 2rem;

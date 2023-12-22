@@ -119,6 +119,31 @@ export const Header = () => {
           >
             Kontakt
           </StyledLink>
+
+          <ul className={styles['social-links']}>
+            <li>
+              <a
+                className={styles['social-links__link']}
+                href="https://www.facebook.com/2mstudiopracowniaprojektowa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Otwórz mój profil na Facebooku"
+              >
+                <BsFacebook />
+              </a>
+            </li>
+            <li>
+              <a
+                className={styles['social-links__link']}
+                href="https://www.instagram.com/2mstudiopracownia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Otwórz mój profil na Instagramie"
+              >
+                <FaInstagram />
+              </a>
+            </li>
+          </ul>
         </div>
       )}
     </Container>
