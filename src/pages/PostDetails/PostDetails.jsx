@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 
 import { getPost } from 'services/api';
 import styles from './PostDetails.module.scss';
+import { BackLink } from 'components';
 
 const PostDetails = () => {
   const { postId } = useParams();
@@ -33,18 +34,21 @@ const PostDetails = () => {
       <Section>
         <Container>
           {post && (
-            <div className={styles['wp-post']}>
-              <span>
-                {new Date(post.date).toLocaleDateString('pl-PL', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </span>
-              <h2>{post.title.rendered}</h2>
-              <hr />
-              <div>{parse(post.content.rendered)}</div>
-            </div>
+            <>
+              <div className={styles['wp-post']}>
+                <span>
+                  {new Date(post.date).toLocaleDateString('pl-PL', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </span>
+                <h2>{post.title.rendered}</h2>
+                <hr />
+                <div>{parse(post.content.rendered)}</div>
+              </div>
+              <BackLink />
+            </>
           )}
         </Container>
       </Section>

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 
 // import styles from './OfferPage.module.scss';
-import { Section, Container } from 'components';
+import { Section, Container, BackLink } from 'components';
 
 const OfferPage = () => {
   return (
@@ -11,7 +11,10 @@ const OfferPage = () => {
       </Helmet>
 
       <Section>
-        <Container>Oferta</Container>
+        <Container>
+          <div>Oferta</div>
+          <BackLink />
+        </Container>
       </Section>
     </>
   );

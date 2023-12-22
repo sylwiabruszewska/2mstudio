@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import { Container } from 'components';
+import { Container, BackLink } from 'components';
 import styles from './PortfolioPage.module.scss';
 
 const PortfolioPage = () => {
@@ -35,6 +35,8 @@ const PortfolioPage = () => {
         <Suspense fallback={''}>
           <Outlet />
         </Suspense>
+
+        <BackLink />
       </Container>
     </>
   );

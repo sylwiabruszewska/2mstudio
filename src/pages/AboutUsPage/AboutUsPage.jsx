@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 import { useDispatch } from 'react-redux';
 
 import styles from './AboutUsPage.module.scss';
-import { Section, Container } from 'components';
+import { Section, Container, BackLink } from 'components';
 import { getAboutUsInfo } from '../../services/api';
 import { setIsLoading } from '../../redux/global/globalSlice';
 
@@ -42,6 +42,8 @@ const AboutUsPage = () => {
               {data && parse(data.content.rendered)}
             </div>
           </div>
+
+          <BackLink />
         </Container>
       </Section>
     </>
