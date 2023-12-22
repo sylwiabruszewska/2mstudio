@@ -1,5 +1,33 @@
 @use 'styles/utils/mixins';
 
-.carousel-item {
-  @include mixins.flex(center);
+.slick-list {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.prev-arrow-custom,
+.next-arrow-custom {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1.4rem;
+
+  &.prev-arrow-custom {
+    left: 0;
+  }
+
+  &.next-arrow-custom {
+    right: 0;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    color: get-color('gray');
+  }
 }
