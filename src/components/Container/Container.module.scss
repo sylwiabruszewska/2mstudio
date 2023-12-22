@@ -14,4 +14,8 @@
   @include mixins.mq(desktop) {
     width: 1200px;
   }
+
+  @include mixins.mq(extra-large) {
+    width: 1920px;
+  }
 }
