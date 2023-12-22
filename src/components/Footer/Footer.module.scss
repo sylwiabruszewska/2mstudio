@@ -8,7 +8,7 @@
     align-items: center;
     gap: 2rem;
     margin-bottom: 2rem;
-    padding: 2rem 0;
+    padding: 2rem;
 
     @include mixins.mq(desktop) {
       flex-direction: row;
@@ -45,7 +45,7 @@
 
   @include mixins.mq(tablet) {
     @include mixins.flex(flex-start, flex-start);
-    max-width: 50%;
+    max-width: 40%;
   }
 }
 
