@@ -15,6 +15,10 @@ const PortfolioPage = () => {
 
       <Container>
         <div className={styles['btn-group']}>
+          <Link to="wszystkie">
+            <button className={styles['btn-iso']}>Wszystkie projekty</button>
+          </Link>
+
           <Link to="wnetrza">
             <button className={styles['btn-iso']}>Wnętrza</button>
           </Link>

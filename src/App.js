@@ -7,6 +7,7 @@ const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const AboutUsPage = lazy(() => import('pages/AboutUsPage/AboutUsPage'));
 const OfferPage = lazy(() => import('pages/OfferPage/OfferPage'));
 const PortfolioPage = lazy(() => import('pages/PortfolioPage/PortfolioPage'));
+const AllProjects = lazy(() => import('pages/ProjectsPages/AllProjects'));
 const Interiors = lazy(() => import('pages/ProjectsPages/Interiors'));
 const BuildingsResidential = lazy(() =>
   import('pages/ProjectsPages/BuildingsResidential')
@@ -34,6 +35,7 @@ export const App = () => {
         <Route path="oferta" element={<OfferPage />} />
 
         <Route path="projekty/" element={<PortfolioPage />}>
+          <Route path="wszystkie" element={<AllProjects />} />
           <Route path="wnetrza" element={<Interiors />} />
           <Route path="budynki-mieszkalne" element={<BuildingsResidential />} />
           <Route path="budynki-uslugowe" element={<BuildingsCommercial />} />

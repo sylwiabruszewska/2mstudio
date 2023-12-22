@@ -38,7 +38,7 @@ export const Header = () => {
             Oferta
           </StyledLink>
 
-          <StyledLink to="/projekty/wnetrza" aria-label="projekty">
+          <StyledLink to="/projekty/wszystkie" aria-label="projekty">
             Projekty
           </StyledLink>
 
