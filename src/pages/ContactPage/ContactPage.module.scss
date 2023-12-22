@@ -11,6 +11,7 @@
 
     @include mixins.mq(desktop) {
       flex-direction: row;
+      align-items: center;
       padding: 2rem;
     }
 
@@ -21,6 +22,7 @@
 
   &__box {
     display: flex;
+    flex-direction: column;
     @include mixins.flex(center);
 
     @include mixins.mq(desktop) {
@@ -30,6 +32,7 @@
 
   &__img {
     width: 100%;
+    margin-top: 2rem;
 
     @include mixins.mq(tablet) {
       width: 70%;

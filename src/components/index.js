@@ -10,3 +10,4 @@ export * from './ListStages/ListStages';
 export * from './ListTrust/ListTrust';
 export * from './Loader/Loader';
 export * from './BackLink/BackLink';
+export * from './ContactForm/ContactForm';

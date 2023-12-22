@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 
 import styles from './ContactPage.module.scss';
-import { Section, Container, Address } from 'components';
+import { Section, Container, ContactForm } from 'components';
 import photo from 'assets/images/interior1.jpg';
 
 const ContactPage = () => {
@@ -15,7 +15,7 @@ const ContactPage = () => {
         <Container>
           <div className={styles['contact__container']}>
             <div className={styles['contact__box']}>
-              <Address />
+              <ContactForm className={styles['contact__form']} />
             </div>
 
             <div className={styles['contact__box']}>
