@@ -8,15 +8,10 @@
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-  background-color: #fff;
-  padding: 2rem;
+  padding: 4rem 0 2rem;
 
   @include mixins.mq(desktop) {
     flex-direction: row;
-  }
-
-  &__container {
-    padding: 2rem 0;
   }
 
   &__heading {
@@ -67,10 +62,4 @@
   background-attachment: fixed;
   //   filter: blur(20px);
   z-index: -1;
-}
-
-///// COMMON STYLES /////
-.center {
-  display: inline-block;
-  text-align: center;
 }

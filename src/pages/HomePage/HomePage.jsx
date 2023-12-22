@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet';
-import { useNavigate } from 'react-router-dom';
 
 import styles from './HomePage.module.scss';
 import {
@@ -8,14 +7,11 @@ import {
   ListPros,
   SliderPortfolio,
   ListStages,
-  Button,
   ListTrust,
 } from 'components';
 import photo from 'assets/images/photo-home.jpg';
 
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <Helmet>
@@ -24,9 +20,7 @@ const Home = () => {
 
       <Container>
         <SliderPortfolio />
-      </Container>
 
-      <Container className={styles['about__container']}>
         <div className={styles['about']}>
           <div className={styles['about__text']}>
             <h1 className={styles['about__heading']}>
@@ -54,32 +48,20 @@ const Home = () => {
             <img className={styles['about__img']} src={photo} alt="" />
           </div>
         </div>
-      </Container>
 
-      <Section title=" ">
-        <Container>
+        <Section title=" ">
           <ListPros />
-        </Container>
-      </Section>
+        </Section>
 
-      <Section title="Co nas wyróżnia?" className={styles['stages-section']}>
-        <div className={styles['stages-bg']}></div>
-        <Container className={styles['center']}>
+        <Section title="Co nas wyróżnia?" className={styles['stages-section']}>
+          <div className={styles['stages-bg']}></div>
           <ListStages />
+        </Section>
 
-          <Button
-            type="button"
-            className={styles.center}
-            onClick={() => navigate('/oferta')}
-          >
-            Poznaj szczegóły
-          </Button>
-        </Container>
-      </Section>
-
-      <Section title="Zaufali nam" className={styles['clients-section']}>
-        <ListTrust />
-      </Section>
+        <Section title="Zaufali nam" className={styles['clients-section']}>
+          <ListTrust />
+        </Section>
+      </Container>
     </>
   );
 };
