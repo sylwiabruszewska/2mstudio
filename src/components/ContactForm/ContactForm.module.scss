@@ -1,8 +1,10 @@
+@use 'styles/utils/mixins';
+
 .form {
   width: 100%;
-  display: flex;
+
+  @include mixins.flex(center, center);
   flex-direction: column;
-  align-items: flex-start;
   gap: 8px;
 
   &-heading {
