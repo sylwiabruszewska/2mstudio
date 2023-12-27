@@ -93,25 +93,37 @@ export const Header = () => {
             <IoMdClose />
           </button>
           <StyledLink
-            to="/"
-            aria-label="strona główna"
+            to="/nasz-zespol"
+            aria-label="o nas"
             onClick={toggleMobileMenu}
           >
-            Home
+            Nasz zespół
           </StyledLink>
-          <StyledLink to="/blog" aria-label="blog" onClick={toggleMobileMenu}>
-            Blog
-          </StyledLink>
+
           <StyledLink
-            to="/projekty/wnetrza"
+            to="/oferta"
+            aria-label="o nas"
+            onClick={toggleMobileMenu}
+          >
+            Oferta
+          </StyledLink>
+
+          <StyledLink
+            to="/projekty/wszystkie"
             aria-label="projekty"
             onClick={toggleMobileMenu}
           >
             Projekty
           </StyledLink>
-          <StyledLink to="/o-nas" aria-label="o nas" onClick={toggleMobileMenu}>
-            O nas
+
+          <StyledLink
+            to="/aktualnosci"
+            aria-label="blog"
+            onClick={toggleMobileMenu}
+          >
+            Aktualności
           </StyledLink>
+
           <StyledLink
             to="/kontakt"
             aria-label="kontakt"
