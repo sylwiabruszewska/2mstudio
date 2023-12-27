@@ -1,4 +1,5 @@
 @use 'styles/utils/mixins';
+@import 'styles/utils/variables';
 
 .form {
   width: 100%;
@@ -17,16 +18,28 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
 
-    textarea {
-      resize: none;
-      height: 100px;
-    }
+  &__input {
+    width: 100%;
+    padding: 10px;
+    margin: 0.4rem 0;
+  }
 
-    input,
-    textarea {
-      padding: 10px;
-      margin: 0.4rem 0 1rem;
-    }
+  &__textarea {
+    @extend .form__input;
+    resize: none;
+    height: 100px;
+  }
+
+  .button {
+    margin-top: 1rem;
+  }
+
+  .error-message {
+    width: 100%;
+    color: get-color('primary');
+    font-size: 14px;
+    line-height: 14px;
   }
 }
