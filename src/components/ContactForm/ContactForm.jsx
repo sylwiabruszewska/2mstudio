@@ -30,7 +30,7 @@ export const ContactForm = () => {
     ),
     message: Yup.string()
       .matches(
-        /^[A-Za-z0-9 .-]+$/,
+        /^[A-Za-z0-9ąćęłńóśźżĄĆĘŁŃÓŚŹŻ .-]+$/,
         'Wiadomość może zawierać wyłącznie litery, cyfry i znaki.'
       )
       .min(50, 'Wiadomość musi zawierać co najmniej 50 znaków.')
