@@ -30,9 +30,10 @@ const Interiors = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    getImages(projects, featuredImages, setFeaturedImages, getImages);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [projects]);
+    if (projects && projects.length > 0) {
+      getImages(projects, featuredImages, setFeaturedImages);
+    }
+  }, [projects, featuredImages]);
 
   return (
     <>
