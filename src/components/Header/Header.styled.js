@@ -7,6 +7,7 @@ export const StyledLink = styled(NavLink)`
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-family: 'Lexend', sans-serif;
+  text-align: center;
 
   position: relative;
 
