@@ -48,6 +48,7 @@
 
   @include mixins.mq(tablet) {
     display: flex;
+    align-items: center;
     gap: 4rem;
     margin: 0 auto;
   }
