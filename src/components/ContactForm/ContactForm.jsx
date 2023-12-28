@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import styles from './ContactForm.module.scss';
 import { Button } from 'components';
@@ -9,8 +10,16 @@ import { Button } from 'components';
 export const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+
+  const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    if (!captchaVerified) {
+      alert('Potwierdź, że nie jesteś robotem.');
+      return;
+    }
+
     try {
       const res = await axios.post('/send_email.php', values);
       console.dir(res);
@@ -148,10 +157,15 @@ export const ContactForm = () => {
                   />
                 </label>
 
+                <ReCAPTCHA
+                  sitekey={siteKey}
+                  onChange={token => setCaptchaVerified(!!token)}
+                />
+
                 <Button
                   className={styles['button']}
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !captchaVerified}
                 >
                   Wyślij
                 </Button>
