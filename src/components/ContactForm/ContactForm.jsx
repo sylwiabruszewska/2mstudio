@@ -36,7 +36,7 @@ export const ContactForm = () => {
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
-      .matches(/^[A-Za-z ]+$/, 'Imię może zawierać wyłącznie litery')
+      .matches(/^[A-Za-ząćęłńóśźż ]+$/, 'Imię może zawierać wyłącznie litery')
       .max(30, 'Imię może zawierać maksymalnie 30 znaków')
       .required('Imię jest wymagane'),
     email: Yup.string()
