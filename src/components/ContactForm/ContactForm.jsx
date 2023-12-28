@@ -10,16 +10,15 @@ import { Button } from 'components';
 export const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
-  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
 
   const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    if (!captchaVerified) {
-      alert('Potwierdź, że nie jesteś robotem.');
-      return;
-    }
+  const handleRecaptchaChange = token => {
+    setRecaptchaToken(token);
+  };
 
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
       const res = await axios.post('/send_email.php', values);
       console.dir(res);
@@ -159,15 +158,12 @@ export const ContactForm = () => {
                   />
                 </label>
 
-                <ReCAPTCHA
-                  sitekey={siteKey}
-                  onChange={token => setCaptchaVerified(!!token)}
-                />
+                <ReCAPTCHA sitekey={siteKey} onChange={handleRecaptchaChange} />
 
                 <Button
                   className={styles['button']}
                   type="submit"
-                  disabled={isSubmitting || !captchaVerified}
+                  disabled={isSubmitting || !recaptchaToken}
                 >
                   Wyślij
                 </Button>
