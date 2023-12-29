@@ -12,3 +12,4 @@ export * from './Loader/Loader';
 export * from './BackLink/BackLink';
 export * from './ContactForm/ContactForm';
 export * from './AnimatedRoute/AnimatedRoute';
+export * from './Map/Map';
