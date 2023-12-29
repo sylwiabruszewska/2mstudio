@@ -1,8 +1,7 @@
 import { Helmet } from 'react-helmet';
 
 import styles from './ContactPage.module.scss';
-import { Section, Container, ContactForm } from 'components';
-import photo from 'assets/images/interior1.jpg';
+import { Section, Container, ContactForm, Map, Address } from 'components';
 
 const ContactPage = () => {
   return (
@@ -15,16 +14,12 @@ const ContactPage = () => {
         <Container>
           <div className={styles['contact__container']}>
             <div className={styles['contact__box']}>
+              <Address />
               <ContactForm className={styles['contact__form']} />
             </div>
 
             <div className={styles['contact__box']}>
-              <img
-                className={styles['contact__img']}
-                src={photo}
-                alt={`Living room`}
-                loading="lazy"
-              />
+              <Map />
             </div>
           </div>
         </Container>
