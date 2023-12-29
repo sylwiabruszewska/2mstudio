@@ -1,12 +1,24 @@
 import { Helmet } from 'react-helmet';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
 
 import { Container, BackLink } from 'components';
 import styles from './PortfolioPage.module.scss';
 
 const PortfolioPage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      navigate('/projekty/wszystkie');
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [navigate]);
+
   return (
     <>
       <Helmet>
@@ -36,7 +48,7 @@ const PortfolioPage = () => {
           </Link>
         </div>
 
-        <Suspense fallback={''}>
+        <Suspense>
           <Outlet />
         </Suspense>
 

@@ -11,7 +11,7 @@ export const AnimatedRoute = ({ children }) => {
         key={location.pathname}
         initial={{ opacity: 0, x: '100%' }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ type: 'tween', duration: 0.6 }}
+        transition={{ type: 'tween', duration: 0.5 }}
       >
         {children}
       </motion.div>
