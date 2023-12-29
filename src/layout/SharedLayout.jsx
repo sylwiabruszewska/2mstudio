@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router-dom';
-import { Suspense, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import { Suspense, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import styles from './SharedLayout.module.scss';
@@ -8,6 +8,12 @@ import { selectIsLoading } from '../redux/global/selectors';
 
 export const SharedLayout = () => {
   const isLoading = useSelector(selectIsLoading);
+  const location = useLocation();
+  const [isRootLevel, setIsRootLevel] = useState(true);
+
+  useEffect(() => {
+    setIsRootLevel(location.pathname.split('/').length <= 2);
+  }, [location]);
 
   const ScrollToTop = () => {
     useEffect(() => {
@@ -29,11 +35,15 @@ export const SharedLayout = () => {
           <Header />
         </header>
         <main className={styles['page-main']}>
-          <AnimatedRoute>
-            <Suspense>
+          <Suspense>
+            {isRootLevel ? (
+              <AnimatedRoute>
+                <Outlet />
+              </AnimatedRoute>
+            ) : (
               <Outlet />
-            </Suspense>
-          </AnimatedRoute>
+            )}
+          </Suspense>
         </main>
         <footer>
           <Footer />
