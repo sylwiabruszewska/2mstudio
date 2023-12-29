@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { Suspense, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
@@ -10,14 +10,17 @@ import styles from './PortfolioPage.module.scss';
 
 const PortfolioPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      navigate('/projekty/wszystkie');
-    }, 500);
+    if (location.pathname === '/projekty') {
+      const timeout = setTimeout(() => {
+        navigate('/projekty/wszystkie');
+      }, 500);
 
-    return () => clearTimeout(timeout);
-  }, [navigate]);
+      return () => clearTimeout(timeout);
+    }
+  }, [location, navigate]);
 
   return (
     <>
