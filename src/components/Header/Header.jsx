@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom';
 import { StyledLink } from './Header.styled';
 import styles from './Header.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { Container } from 'components';
 
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
+import { BsFacebook } from 'react-icons/bs';
+import { FaInstagram } from 'react-icons/fa';
+
 import { setIsMobileMenuOpen } from '../../redux/global/globalSlice';
 import { selectIsMobileMenuOpen } from '../../redux/global/selectors';
 
@@ -19,38 +23,69 @@ export const Header = () => {
   };
 
   return (
-    <div className={styles['page-header']}>
+    <Container className={styles['page-header']}>
       <Link to="/" aria-label="strona główna">
         <Logo className={styles['logo']} />
       </Link>
 
-      <nav className={styles['nav']}>
-        <StyledLink to="/" aria-label="strona główna">
-          Home
-        </StyledLink>
-        <StyledLink to="/blog" aria-label="blog">
-          Blog
-        </StyledLink>
-        <StyledLink to="/projekty/wnetrza" aria-label="projekty">
-          Projekty
-        </StyledLink>
-        <StyledLink to="/o-nas" aria-label="o nas">
-          O nas
-        </StyledLink>
-        <StyledLink to="/kontakt" aria-label="kontakt">
-          Kontakt
-        </StyledLink>
-      </nav>
+      <div className={styles['box']}>
+        <nav className={styles['nav']}>
+          <StyledLink to="/nasz-zespol" aria-label="nasz zespół">
+            Nasz zespół
+          </StyledLink>
 
-      {/* MENU MOBILE */}
-      <button
-        className={styles['menu-toggle']}
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        onClick={toggleMobileMenu}
-      >
-        <AiOutlineMenu />
-      </button>
+          <StyledLink to="/oferta" aria-label="oferta">
+            Oferta
+          </StyledLink>
+
+          <StyledLink to="/projekty" aria-label="projekty">
+            Projekty
+          </StyledLink>
+
+          <StyledLink to="/aktualnosci" aria-label="aktualności">
+            Aktualności
+          </StyledLink>
+
+          <StyledLink to="/kontakt" aria-label="kontakt">
+            Kontakt
+          </StyledLink>
+        </nav>
+
+        <ul className={styles['social-links']}>
+          <li>
+            <a
+              className={styles['social-links__link']}
+              href="https://www.facebook.com/2mstudiopracowniaprojektowa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otwórz mój profil na Facebooku"
+            >
+              <BsFacebook />
+            </a>
+          </li>
+          <li>
+            <a
+              className={styles['social-links__link']}
+              href="https://www.instagram.com/2mstudiopracownia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otwórz mój profil na Instagramie"
+            >
+              <FaInstagram />
+            </a>
+          </li>
+        </ul>
+
+        {/* MENU MOBILE */}
+        <button
+          className={styles['menu-toggle']}
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          onClick={toggleMobileMenu}
+        >
+          <AiOutlineMenu className={styles['menu-toggle__icon']} />
+        </button>
+      </div>
 
       {isMobileMenuVisible && (
         <div className={styles['mobile-menu']}>
@@ -58,25 +93,37 @@ export const Header = () => {
             <IoMdClose />
           </button>
           <StyledLink
-            to="/"
-            aria-label="strona główna"
+            to="/nasz-zespol"
+            aria-label="o nas"
             onClick={toggleMobileMenu}
           >
-            Home
+            Nasz zespół
           </StyledLink>
-          <StyledLink to="/blog" aria-label="blog" onClick={toggleMobileMenu}>
-            Blog
-          </StyledLink>
+
           <StyledLink
-            to="/projekty/wnetrza"
+            to="/oferta"
+            aria-label="o nas"
+            onClick={toggleMobileMenu}
+          >
+            Oferta
+          </StyledLink>
+
+          <StyledLink
+            to="/projekty"
             aria-label="projekty"
             onClick={toggleMobileMenu}
           >
             Projekty
           </StyledLink>
-          <StyledLink to="/o-nas" aria-label="o nas" onClick={toggleMobileMenu}>
-            O nas
+
+          <StyledLink
+            to="/aktualnosci"
+            aria-label="blog"
+            onClick={toggleMobileMenu}
+          >
+            Aktualności
           </StyledLink>
+
           <StyledLink
             to="/kontakt"
             aria-label="kontakt"
@@ -84,8 +131,33 @@ export const Header = () => {
           >
             Kontakt
           </StyledLink>
+
+          <ul className={styles['social-links']}>
+            <li>
+              <a
+                className={styles['social-links__link']}
+                href="https://www.facebook.com/2mstudiopracowniaprojektowa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Otwórz mój profil na Facebooku"
+              >
+                <BsFacebook />
+              </a>
+            </li>
+            <li>
+              <a
+                className={styles['social-links__link']}
+                href="https://www.instagram.com/2mstudiopracownia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Otwórz mój profil na Instagramie"
+              >
+                <FaInstagram />
+              </a>
+            </li>
+          </ul>
         </div>
       )}
-    </div>
+    </Container>
   );
 };

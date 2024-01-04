@@ -3,37 +3,26 @@
 
 .contact {
   &__container {
-    background-color: get-color('white');
-    padding: 2rem;
-
-    @include mixins.flex(center);
+    @include mixins.flex(flex-start, flex-start);
     flex-direction: column;
     gap: 2rem;
+    margin-bottom: 2rem;
 
     @include mixins.mq(desktop) {
       flex-direction: row;
-      padding: 2rem;
-    }
-
-    p {
-      margin-bottom: 2rem;
+      gap: 4rem;
+      justify-content: flex-start;
     }
   }
 
   &__box {
     display: flex;
+    flex-direction: column;
     @include mixins.flex(center);
+    width: 100%;
 
     @include mixins.mq(desktop) {
       width: 50%;
-    }
-  }
-
-  &__img {
-    width: 100%;
-
-    @include mixins.mq(tablet) {
-      width: 70%;
     }
   }
 }

@@ -5,10 +5,15 @@ import { useDispatch } from 'react-redux';
 
 import styles from './Projects.module.scss';
 import { getImages } from '../../helpers/getImages';
-import { getPortfolioInterior } from '../../services/api';
+import {
+  getPortfolioInterior,
+  getPortoflioBuildingsCommercial,
+  getPortoflioBuildingsIndustrial,
+  getPortoflioBuildingsResidential,
+} from '../../services/api';
 import { setIsLoading } from '../../redux/global/globalSlice';
 
-const Interiors = () => {
+const AllProjects = () => {
   const [projects, setProjects] = useState();
   const [featuredImages, setFeaturedImages] = useState({});
   const dispatch = useDispatch();
@@ -17,8 +22,26 @@ const Interiors = () => {
     const fetchData = async () => {
       dispatch(setIsLoading(true));
       try {
-        const data = await getPortfolioInterior();
-        setProjects(data);
+        const [
+          InteriorProjects,
+          commercialProjects,
+          residentialProjects,
+          industrialProjects,
+        ] = await Promise.all([
+          getPortfolioInterior(),
+          getPortoflioBuildingsCommercial(),
+          getPortoflioBuildingsResidential(),
+          getPortoflioBuildingsIndustrial(),
+        ]);
+
+        const allProjects = [
+          ...InteriorProjects,
+          ...commercialProjects,
+          ...residentialProjects,
+          ...industrialProjects,
+        ];
+
+        setProjects(allProjects);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -38,7 +61,7 @@ const Interiors = () => {
   return (
     <>
       <Helmet>
-        <title>2M STUDIO Pracownia Projektowa - Budynki przemysłowe</title>
+        <title>2M STUDIO Pracownia Projektowa - Budynki usługowe</title>
       </Helmet>
 
       <ul className={styles['gallery']}>
@@ -72,4 +95,4 @@ const Interiors = () => {
   );
 };
 
-export default Interiors;
+export default AllProjects;

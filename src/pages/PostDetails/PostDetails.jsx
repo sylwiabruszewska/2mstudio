@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 
 import { getPost } from 'services/api';
 import styles from './PostDetails.module.scss';
+import { BackLink, AnimatedRoute } from 'components';
 
 const PostDetails = () => {
   const { postId } = useParams();
@@ -27,24 +28,27 @@ const PostDetails = () => {
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa</title>
+        <title>2M STUDIO Pracownia Projektowa</title>
       </Helmet>
 
       <Section>
         <Container>
           {post && (
-            <div className={styles['wp-post']}>
-              <span>
-                {new Date(post.date).toLocaleDateString('pl-PL', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </span>
-              <h2>{post.title.rendered}</h2>
-              <hr />
-              <div>{parse(post.content.rendered)}</div>
-            </div>
+            <AnimatedRoute>
+              <div className={styles['wp-post']}>
+                <span>
+                  {new Date(post.date).toLocaleDateString('pl-PL', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </span>
+                <h2>{post.title.rendered}</h2>
+                <hr />
+                <div>{parse(post.content.rendered)}</div>
+              </div>
+              <BackLink />
+            </AnimatedRoute>
           )}
         </Container>
       </Section>

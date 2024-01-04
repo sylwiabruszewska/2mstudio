@@ -1,25 +1,28 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 import styles from './SharedLayout.module.scss';
-import { Bar, Header, Footer, Loader } from 'components';
+import { Header, Footer, Loader, AnimatedRoute } from 'components';
 import { selectIsLoading } from '../redux/global/selectors';
 
 export const SharedLayout = () => {
   const isLoading = useSelector(selectIsLoading);
+  const location = useLocation();
+  const [isRootLevel, setIsRootLevel] = useState(true);
+
+  useEffect(() => {
+    setIsRootLevel(location.pathname.split('/').length <= 2);
+  }, [location]);
 
   const ScrollToTop = () => {
-    const { pathname } = useLocation();
-
     useEffect(() => {
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'smooth',
       });
-    }, [pathname]);
+    }, []);
 
     return null;
   };
@@ -29,12 +32,17 @@ export const SharedLayout = () => {
       {isLoading && <Loader />}
       <div className={styles['wrapper']}>
         <header>
-          <Bar />
           <Header />
         </header>
         <main className={styles['page-main']}>
           <Suspense>
-            <Outlet />
+            {isRootLevel ? (
+              <AnimatedRoute>
+                <Outlet />
+              </AnimatedRoute>
+            ) : (
+              <Outlet />
+            )}
           </Suspense>
         </main>
         <footer>

@@ -1,15 +1,19 @@
+import { useNavigate } from 'react-router-dom';
+
 import { BiSolidCoffeeAlt } from 'react-icons/bi';
 import { FaLightbulb } from 'react-icons/fa';
 import { FaBook } from 'react-icons/fa6';
 import { FaHouse } from 'react-icons/fa6';
 
 import styles from './ListStages.module.scss';
+import { Button } from 'components';
 
 export const ListStages = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <div className={styles['stages-bg']}></div>
-      <ul className={styles['list-stages']}>
+    <div className={styles['stages-container']}>
+      <ul className={styles['list']}>
         <li className={styles['list__item']}>
           <BiSolidCoffeeAlt className={styles['list__icon']} />
           <h3 className={styles['item__heading']}>Spotkanie</h3>
@@ -49,6 +53,9 @@ export const ListStages = () => {
           </p>
         </li>
       </ul>
+      <Button type="button" onClick={() => navigate('/oferta')}>
+        Poznaj szczegóły
+      </Button>
     </div>
   );
 };

@@ -30,14 +30,15 @@ const BuildingsResidential = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    getImages(projects, featuredImages, setFeaturedImages, getImages);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [projects]);
+    if (projects && projects.length > 0) {
+      getImages(projects, featuredImages, setFeaturedImages);
+    }
+  }, [projects, featuredImages]);
 
   return (
     <>
       <Helmet>
-        <title>2m Studio Pracownia Projektowa - Budynki przemysłowe</title>
+        <title>2M STUDIO Pracownia Projektowa - Budynki przemysłowe</title>
       </Helmet>
 
       <ul className={styles['gallery']}>
@@ -56,9 +57,9 @@ const BuildingsResidential = () => {
                       />
                       <div className={styles['card__overlay']}>
                         <div className={styles['box']}>
-                          <p className={styles['card__title']}>
+                          <h3 className={styles['card__title']}>
                             {post.title.rendered}
-                          </p>
+                          </h3>
                         </div>
                       </div>
                     </div>

@@ -1,9 +1,5 @@
 @use 'styles/utils/mixins';
 
-.full {
-  width: 100%;
-}
-
 .wide {
   min-width: 320px;
   width: 100%;
@@ -17,5 +13,9 @@
 
   @include mixins.mq(desktop) {
     width: 1200px;
+  }
+
+  @include mixins.mq(extra-large) {
+    width: 1920px;
   }
 }

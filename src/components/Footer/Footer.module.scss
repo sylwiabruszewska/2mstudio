@@ -2,32 +2,22 @@
 @use 'styles/utils/variables';
 
 .footer {
-  &__page {
-    background-color: variables.get-color('light');
-    padding: 2rem 0;
-  }
-
   &__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
     margin-bottom: 2rem;
+    padding: 2rem;
 
     @include mixins.mq(desktop) {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
     }
   }
 
-  &__heading {
-    font-size: 1rem;
-    font-weight: normal;
-    color: variables.get-color('gray');
-    font-weight: 600;
-  }
-
   &__text {
-    font-size: 1rem;
     font-weight: 700;
     color: variables.get-color('dark');
     margin-bottom: 0.4rem;
@@ -38,15 +28,12 @@
   color: variables.get-color('gray');
   font-weight: 600;
   line-height: 1.4rem;
-}
+  @include mixins.flex(center, center);
+  flex-direction: column;
 
-.list {
-  &__content {
-    @include mixins.flex(flex-start, center);
-  }
-
-  &__item:not(:last-child) {
-    margin-bottom: 10px;
+  @include mixins.mq(tablet) {
+    @include mixins.flex(flex-start, flex-start);
+    max-width: 40%;
   }
 }
 

@@ -4,10 +4,10 @@ import { colors } from '../../styles/colors.js';
 
 export const StyledLink = styled(NavLink)`
   color: ${colors.dark};
-  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-family: 'Lexend', sans-serif;
+  text-align: center;
 
   position: relative;
 

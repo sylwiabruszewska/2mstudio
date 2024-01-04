@@ -1,14 +1,11 @@
 import PropTypes from 'prop-types';
 import styles from './Container.module.scss';
 
-export const Container = ({ children, className, type }) => {
-  const containerClass = type === 'full' ? styles.full : styles.wide;
-
-  return <div className={`${containerClass} ${className}`}>{children}</div>;
+export const Container = ({ children, className }) => {
+  return <div className={`${styles.wide} ${className}`}>{children}</div>;
 };
 
 Container.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  type: PropTypes.oneOf(['full', 'wide']),
 };

@@ -28,16 +28,20 @@
 
 ///// BUTTONS /////
 .btn-group {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  gap: 1rem;
-  background-color: get-color('white');
+  margin-bottom: 1rem;
   padding: 1rem;
+
+  @include mixins.mq(tablet) {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 .btn-iso {
   padding: 5px 20px;
-  font-size: 16px;
   cursor: pointer;
 
   justify-content: center;

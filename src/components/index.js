@@ -1,5 +1,4 @@
 export * from './Container/Container';
-export * from './Bar/Bar';
 export * from './Header/Header';
 export * from './Address/Address';
 export * from './Footer/Footer';
@@ -10,3 +9,7 @@ export * from './Button/Button';
 export * from './ListStages/ListStages';
 export * from './ListTrust/ListTrust';
 export * from './Loader/Loader';
+export * from './BackLink/BackLink';
+export * from './ContactForm/ContactForm';
+export * from './AnimatedRoute/AnimatedRoute';
+export * from './Map/Map';
