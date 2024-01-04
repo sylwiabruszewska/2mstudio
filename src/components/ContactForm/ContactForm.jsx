@@ -20,7 +20,8 @@ export const ContactForm = () => {
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      const res = await axios.post('/send_email.php', values);
+      const dataToSend = { ...values, recaptchaToken };
+      const res = await axios.post('/send_email.php', dataToSend);
       console.dir(res);
       setSubmitted(true);
       errorMessage(false);
