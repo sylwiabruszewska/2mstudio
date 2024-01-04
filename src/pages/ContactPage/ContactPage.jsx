@@ -14,11 +14,21 @@ const ContactPage = () => {
         <Container>
           <div className={styles['contact__container']}>
             <div className={styles['contact__box']}>
-              <Address />
+              <div>
+                <p className={styles['contact__text']}>Zadzwoń do nas</p>
+                <Address contain="tel" />
+              </div>
+
               <ContactForm className={styles['contact__form']} />
             </div>
 
             <div className={styles['contact__box']}>
+              <div>
+                {' '}
+                <p className={styles['contact__text']}>Tu jesteśmy</p>
+                <Address contain="location" />
+              </div>
+
               <Map />
             </div>
           </div>
