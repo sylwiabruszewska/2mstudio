@@ -1,11 +1,16 @@
 import axios from 'axios';
 import { BASE_URL, API_PATHS } from '../config.js';
 
-axios.defaults.baseURL = BASE_URL;
+const instance = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
 export const fetchData = async path => {
   try {
-    const response = await axios.get(`${BASE_URL}${path}`, {
+    const response = await instance.get(`${BASE_URL}${path}`, {
       headers: {
         accept: 'application/json',
       },
@@ -30,7 +35,7 @@ export const getPost = async postId => {
 export const getBlogPosts = async (page, perPage = 6) => {
   const apiUrl = `${API_PATHS.blog}&page=${page}&per_page=${perPage}`;
   try {
-    const response = await axios.get(apiUrl, {
+    const response = await instance.get(apiUrl, {
       headers: {
         accept: 'application/json',
       },
@@ -79,7 +84,7 @@ export const getAboutUsInfo = async () => {
 
 export const fetchImages = async mediaId => {
   try {
-    const response = await axios.get(`${API_PATHS.media}${mediaId}`);
+    const response = await instance.get(`${API_PATHS.media}${mediaId}`);
 
     if (response.status !== 200) {
       throw new Error('Network response was not ok');
