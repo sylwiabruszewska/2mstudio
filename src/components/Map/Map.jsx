@@ -16,6 +16,7 @@ export const Map = () => {
 
   const [map, setMap] = useState(null);
   const [marker, setMarker] = useState(null);
+  const [showLabel, setShowLabel] = useState(true);
 
   const onLoad = map => {
     setMap(map);
@@ -24,6 +25,7 @@ export const Map = () => {
       map,
     });
     setMarker(newMarker);
+    setShowLabel(!showLabel);
   };
 
   return (
@@ -34,7 +36,26 @@ export const Map = () => {
         zoom={15}
         onLoad={onLoad}
       >
-        {map && marker && <Marker position={defaultCenter} />}
+        {map && marker && (
+          <>
+            <Marker position={defaultCenter} />
+            {showLabel && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: `44%`,
+                  left: `55%`,
+                  zIndex: 1000,
+                }}
+              >
+                <p>
+                  2M Studio <br />
+                  Pracownia Projektowa
+                </p>
+              </div>
+            )}
+          </>
+        )}
       </GoogleMap>
     </LoadScript>
   );
