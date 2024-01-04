@@ -2,9 +2,6 @@
 @import 'styles/utils/variables';
 
 .wp-post {
-  background-color: fet-color('white');
-  padding: 2rem;
-
   h2 {
     margin: 1rem 0 2rem;
   }
@@ -27,10 +24,10 @@
     width: 100%;
     height: auto;
     display: block;
+    margin: 2rem auto;
 
     @include mixins.mq(tablet) {
       width: 70%;
-      margin: 2rem auto;
     }
   }
 }
