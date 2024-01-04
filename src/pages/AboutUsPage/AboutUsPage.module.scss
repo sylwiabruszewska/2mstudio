@@ -6,9 +6,10 @@
   width: 100%;
   display: block;
   height: 500px;
+  // height: auto;
 
   @include mixins.mq(tablet) {
-    width: 70%;
+    width: 700px;
     margin: 0 auto;
   }
 }
@@ -16,7 +17,6 @@
 .wrapper {
   display: flex;
   justify-content: center;
-  padding: 2rem 4rem;
 
   .content {
     display: flex;
@@ -25,9 +25,13 @@
   }
 
   .content img {
-    width: 500px;
+    width: 100%;
     height: auto;
     margin-bottom: 20px;
+
+    @include mixins.mq(desktop) {
+      width: 700px;
+    }
   }
 
   h3 {
