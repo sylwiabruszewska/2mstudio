@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useQuery } from 'react-query';
 
 import styles from './Projects.module.scss';
 import { getImages } from '../../helpers/getImages';
@@ -9,31 +10,23 @@ import { getPortfolioInterior } from '../../services/api';
 import { setIsLoading } from '../../redux/global/globalSlice';
 
 const Interiors = () => {
-  const [projects, setProjects] = useState();
   const [featuredImages, setFeaturedImages] = useState({});
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      dispatch(setIsLoading(true));
-      try {
-        const data = await getPortfolioInterior();
-        setProjects(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
+  const { data: projects } = useQuery(
+    'portfolioInterior',
+    getPortfolioInterior,
+    {
+      onSuccess: data => {
+        if (data && data.length > 0) {
+          getImages(data, featuredImages, setFeaturedImages);
+        }
+      },
+      onSettled: () => {
         dispatch(setIsLoading(false));
-      }
-    };
-
-    fetchData();
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (projects && projects.length > 0) {
-      getImages(projects, featuredImages, setFeaturedImages);
+      },
     }
-  }, [projects, featuredImages]);
+  );
 
   return (
     <>
