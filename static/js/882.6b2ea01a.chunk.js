@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunk_2mstudio=self.webpackChunk_2mstudio||[]).push([[882],{6882:(e,s,r)=>{r.r(s),r.d(s,{default:()=>d});var i=r(4270),t=r(7527),c=r(184);const d=()=>(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(i.q,{children:(0,c.jsx)("title",{children:"2M STUDIO Pracownia Projektowa - Oferta"})}),(0,c.jsx)(t.$0,{children:(0,c.jsxs)(t.W2,{children:[(0,c.jsx)("div",{children:"Oferta"}),(0,c.jsx)(t.hb,{})]})})]})}}]);
-//# sourceMappingURL=882.6b2ea01a.chunk.js.map
