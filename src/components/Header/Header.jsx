@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import { StyledLink } from './Header.styled';
 import styles from './Header.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
 import { Container } from 'components';
 
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
@@ -11,15 +11,11 @@ import { IoMdClose } from 'react-icons/io';
 import { BsFacebook } from 'react-icons/bs';
 import { FaInstagram } from 'react-icons/fa';
 
-import { setIsMobileMenuOpen } from '../../redux/global/globalSlice';
-import { selectIsMobileMenuOpen } from '../../redux/global/selectors';
-
 export const Header = () => {
-  const dispatch = useDispatch();
-  const isMobileMenuVisible = useSelector(selectIsMobileMenuOpen);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    dispatch(setIsMobileMenuOpen(!isMobileMenuVisible));
+    setIsMobileMenuOpen(prevState => !prevState);
   };
 
   return (
@@ -87,7 +83,7 @@ export const Header = () => {
         </button>
       </div>
 
-      {isMobileMenuVisible && (
+      {isMobileMenuOpen && (
         <div className={styles['mobile-menu']}>
           <button onClick={toggleMobileMenu} className={styles['close-button']}>
             <IoMdClose />
