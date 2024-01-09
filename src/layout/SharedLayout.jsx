@@ -1,13 +1,10 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Suspense, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import styles from './SharedLayout.module.scss';
-import { Header, Footer, Loader, AnimatedRoute } from 'components';
-import { selectIsLoading } from '../redux/global/selectors';
+import { Header, Footer, AnimatedRoute } from 'components';
 
 export const SharedLayout = () => {
-  const isLoading = useSelector(selectIsLoading);
   const location = useLocation();
   const [isRootLevel, setIsRootLevel] = useState(true);
 
@@ -29,7 +26,6 @@ export const SharedLayout = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
       <div className={styles['wrapper']}>
         <header>
           <Header />

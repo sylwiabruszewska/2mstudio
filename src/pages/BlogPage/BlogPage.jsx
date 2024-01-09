@@ -1,20 +1,17 @@
 import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import styles from './BlogPage.module.scss';
 import { Section, Container, Button, AnimatedRoute } from 'components';
 import { getImages } from '../../helpers/getImages';
 import { getBlogPosts } from '../../services/api';
-import { setIsLoading } from '../../redux/global/globalSlice';
 
 const BlogPage = () => {
   const [posts, setPosts] = useState();
   const [featuredImages, setFeaturedImages] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPageBlog, setLastPageBlog] = useState(null);
-  const dispatch = useDispatch();
   const location = useLocation();
   const [dataLoaded, setDataLoaded] = useState(false);
 
@@ -49,7 +46,6 @@ const BlogPage = () => {
   };
 
   const fetchData = async () => {
-    dispatch(setIsLoading(true));
     try {
       const { posts, lastPage } = await getBlogPosts(currentPage);
 
@@ -61,8 +57,6 @@ const BlogPage = () => {
       setDataLoaded(true);
     } catch (error) {
       console.error('Error fetching data:', error);
-    } finally {
-      dispatch(setIsLoading(false));
     }
   };
 
