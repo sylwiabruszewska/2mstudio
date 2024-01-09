@@ -13,3 +13,4 @@ export * from './BackLink/BackLink';
 export * from './ContactForm/ContactForm';
 export * from './AnimatedRoute/AnimatedRoute';
 export * from './Map/Map';
+export * from './ProjectCard/ProjectCard';
