@@ -79,7 +79,11 @@ export const getPortoflioBuildingsCommercial = async () => {
 
 export const getAboutUsInfo = async () => {
   const data = await fetchData(API_PATHS.aboutUs);
-  return data;
+  if (data && data.content && data.content.rendered) {
+    return data.content.rendered;
+  } else {
+    throw new Error('Nie można pobrać zawartości strony O nas.');
+  }
 };
 
 export const fetchImages = async mediaId => {

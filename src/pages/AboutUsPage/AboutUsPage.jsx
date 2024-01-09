@@ -1,26 +1,21 @@
 import { Helmet } from 'react-helmet';
-import { useEffect, useState } from 'react';
 import parse from 'html-react-parser';
+import { useQuery } from 'react-query';
 
 import styles from './AboutUsPage.module.scss';
-import { Section, Container, BackLink } from 'components';
+import { Section, Container, BackLink, Loader } from 'components';
 import { getAboutUsInfo } from '../../services/api';
 
 const AboutUsPage = () => {
-  const [data, setData] = useState();
+  const { data, isLoading, isError } = useQuery('aboutUsInfo', getAboutUsInfo);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getAboutUsInfo();
-        setData(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+  if (isLoading) {
+    return <Loader />;
+  }
 
-    fetchData();
-  }, []);
+  if (isError) {
+    return <p>Wystąpił błąd, spróbuj odświeżyć stronę.</p>;
+  }
 
   return (
     <>
@@ -32,9 +27,7 @@ const AboutUsPage = () => {
         <Container>
           <img src="" className={styles['img']} alt="Nasz zespół" />
           <div className={styles['wrapper']}>
-            <div className={styles['content']}>
-              {data && parse(data.content.rendered)}
-            </div>
+            <div className={styles['content']}>{data && parse(data)}</div>
           </div>
 
           <BackLink />
