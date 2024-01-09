@@ -1,32 +1,25 @@
 import { Helmet } from 'react-helmet';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { useQuery } from 'react-query';
 
 import styles from './Projects.module.scss';
-import { getImages } from '../../helpers/getImages';
+import { Loader } from 'components';
 import { getPortfolioInterior } from '../../services/api';
-import { setIsLoading } from '../../redux/global/globalSlice';
 
 const Interiors = () => {
-  const [featuredImages, setFeaturedImages] = useState({});
-  const dispatch = useDispatch();
+  const {
+    data: projects,
+    isLoading,
+    isError,
+  } = useQuery('portfolioInterior', getPortfolioInterior);
 
-  const { data: projects } = useQuery(
-    'portfolioInterior',
-    getPortfolioInterior,
-    {
-      onSuccess: data => {
-        if (data && data.length > 0) {
-          getImages(data, featuredImages, setFeaturedImages);
-        }
-      },
-      onSettled: () => {
-        dispatch(setIsLoading(false));
-      },
-    }
-  );
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return <p>Wystąpił błąd, spróbuj odświeżyć stronę.</p>;
+  }
 
   return (
     <>
@@ -36,27 +29,24 @@ const Interiors = () => {
 
       <ul className={styles['gallery']}>
         {projects &&
-          projects.map(post => (
-            <li key={post.id} className={styles['photo-card']}>
-              <Link to={`/${post.id}`}>
-                {post.featured_media !== 0 &&
-                  featuredImages[post.featured_media] && (
-                    <div className={styles['img-container']}>
-                      <img
-                        className={styles['card__img']}
-                        src={featuredImages[post.featured_media]}
-                        alt={post.title.rendered}
-                        loading="lazy"
-                      />
-                      <div className={styles['card__overlay']}>
-                        <div className={styles['box']}>
-                          <h3 className={styles['card__title']}>
-                            {post.title.rendered}
-                          </h3>
-                        </div>
-                      </div>
+          projects.map(project => (
+            <li key={project.id} className={styles['photo-card']}>
+              <Link to={`/${project.id}`}>
+                <div className={styles['img-container']}>
+                  <img
+                    className={styles['card__img']}
+                    src={project.featured_media}
+                    alt={project.title.rendered}
+                    loading="lazy"
+                  />
+                  <div className={styles['card__overlay']}>
+                    <div className={styles['box']}>
+                      <h3 className={styles['card__title']}>
+                        {project.title.rendered}
+                      </h3>
                     </div>
-                  )}
+                  </div>
+                </div>
               </Link>
             </li>
           ))}

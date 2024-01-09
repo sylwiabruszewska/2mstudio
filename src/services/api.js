@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { BASE_URL, API_PATHS } from '../config.js';
 
+import defaultImage from '../assets/images/photo-home.jpg';
+
 const instance = axios.create({
   baseURL: BASE_URL,
   headers: {
@@ -57,9 +59,32 @@ export const getBlogPosts = async (page, perPage = 6) => {
   }
 };
 
+// export const getPortfolioInterior = async () => {
+//   const projects = await fetchData(API_PATHS.portfolioInterior);
+//   return projects;
+// };
+
 export const getPortfolioInterior = async () => {
   const projects = await fetchData(API_PATHS.portfolioInterior);
-  return projects;
+
+  const projectsWithImages = await Promise.all(
+    projects.map(async project => {
+      if (project.featured_media) {
+        try {
+          const featuredMedia = await fetchImages(project.featured_media);
+          project.featured_media = featuredMedia?.source_url || defaultImage;
+        } catch (error) {
+          console.error(
+            'There was a problem fetching images for project:',
+            error
+          );
+        }
+      }
+      return project;
+    })
+  );
+
+  return projectsWithImages;
 };
 
 export const getPortoflioBuildingsResidential = async () => {
