@@ -88,35 +88,56 @@ export const getPortoflioBuildingsCommercial = async () => {
   return projects;
 };
 
-// fetch blog posts - to update
+// fetch blog posts
+export const getBlogPosts = async (page, perPage = 6) => {
+  const apiUrl = `${API_PATHS.blog}&page=${page}&per_page=${perPage}`;
+
+  const response = await instance.get(apiUrl, {
+    headers: {
+      accept: 'application/json',
+    },
+  });
+
+  if (response.status === 200) {
+    const totalPostsHeader = response.headers['x-wp-total'];
+    const posts = response.data;
+    const lastPage = Math.ceil(parseInt(totalPostsHeader) / perPage);
+
+    const postsWithImages = await Promise.all(
+      posts.map(async post => {
+        let simplifiedPost = {
+          id: post.id,
+          img: defaultImage,
+          title: post.title.rendered,
+          date: post.date,
+          excerpt: post.excerpt.rendered,
+        };
+
+        if (post.featured_media) {
+          try {
+            const featuredMedia = await fetchImages(post.featured_media);
+            simplifiedPost.img = featuredMedia.source_url || defaultImage;
+          } catch (error) {
+            console.error(
+              'There was a problem fetching images for posts:',
+              error
+            );
+          }
+        }
+
+        return simplifiedPost;
+      })
+    );
+
+    return { posts: postsWithImages, lastPage };
+  } else {
+    throw new Error('Network response was not ok');
+  }
+};
+
 export const getPost = async postId => {
   const post = await fetchData(`${API_PATHS.post}/${postId}`);
   return post;
-};
-
-export const getBlogPosts = async (page, perPage = 6) => {
-  const apiUrl = `${API_PATHS.blog}&page=${page}&per_page=${perPage}`;
-  try {
-    const response = await instance.get(apiUrl, {
-      headers: {
-        accept: 'application/json',
-      },
-    });
-
-    if (response.status === 200) {
-      const totalPostsHeader = response.headers['x-wp-total'];
-      const posts = response.data;
-
-      const lastPage = Math.ceil(parseInt(totalPostsHeader) / perPage);
-
-      return { posts, lastPage };
-    } else {
-      throw new Error('Network response was not ok');
-    }
-  } catch (error) {
-    console.error('An error occurred while fetching blog posts:', error);
-    throw error;
-  }
 };
 
 // fetch data for a subpage - About Us
