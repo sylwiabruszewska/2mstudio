@@ -68,17 +68,23 @@ export const getPortfolioInterior = async () => {
 };
 
 export const getPortoflioBuildingsResidential = async () => {
-  const projects = await fetchData(API_PATHS.portoflioBuildingsResidential);
+  const projects = await fetchProjectsWithImages(
+    API_PATHS.portoflioBuildingsResidential
+  );
   return projects;
 };
 
 export const getPortoflioBuildingsIndustrial = async () => {
-  const projects = await fetchData(API_PATHS.portoflioBuildingsIndustrial);
+  const projects = await fetchProjectsWithImages(
+    API_PATHS.portoflioBuildingsIndustrial
+  );
   return projects;
 };
 
 export const getPortoflioBuildingsCommercial = async () => {
-  const projects = await fetchData(API_PATHS.portoflioBuildingsCommercial);
+  const projects = await fetchProjectsWithImages(
+    API_PATHS.portoflioBuildingsCommercial
+  );
   return projects;
 };
 
