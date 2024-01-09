@@ -38,15 +38,14 @@ export const fetchProjectsWithImages = async path => {
     projects.map(async project => {
       let simplifiedProject = {
         id: project.id,
-        featured_media: defaultImage,
+        img: defaultImage,
         title: project.title.rendered,
       };
 
       if (project.featured_media) {
         try {
           const featuredMedia = await fetchImages(project.featured_media);
-          simplifiedProject.featured_media =
-            featuredMedia.source_url || defaultImage;
+          simplifiedProject.img = featuredMedia.source_url || defaultImage;
         } catch (error) {
           console.error(
             'There was a problem fetching images for project:',
