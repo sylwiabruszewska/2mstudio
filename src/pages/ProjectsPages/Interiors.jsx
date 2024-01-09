@@ -36,14 +36,12 @@ const Interiors = () => {
                   <img
                     className={styles['card__img']}
                     src={project.featured_media}
-                    alt={project.title.rendered}
+                    alt={project.title}
                     loading="lazy"
                   />
                   <div className={styles['card__overlay']}>
                     <div className={styles['box']}>
-                      <h3 className={styles['card__title']}>
-                        {project.title.rendered}
-                      </h3>
+                      <h3 className={styles['card__title']}>{project.title}</h3>
                     </div>
                   </div>
                 </div>
