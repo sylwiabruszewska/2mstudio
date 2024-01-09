@@ -27,9 +27,9 @@ export const ListStages = () => {
           <FaLightbulb className={styles['list__icon']} />
           <h3 className={styles['item__heading']}>Projektowanie</h3>
           <p className={styles['item__text']}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            imperdiet, erat id porttitor pellentesque, magna velit facilisis
-            ante, et auctor enim nunc non nunc.
+            Podczas procesu projektowania starannie analizujemy Twoje potrzeby i
+            preferencje, tworząc koncepcję idealnie dopasowaną do Twojego stylu
+            życia i estetyki.
           </p>
         </li>
 
@@ -37,9 +37,8 @@ export const ListStages = () => {
           <FaBook className={styles['list__icon']} />
           <h3 className={styles['item__heading']}>Projekt wykonawczy</h3>
           <p className={styles['item__text']}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            imperdiet, erat id porttitor pellentesque, magna velit facilisis
-            ante, et auctor enim nunc non nunc.
+            Projekt wykonawczy to etap, na którym skupiamy się na szczegółowym
+            planowaniu i dokumentowaniu całego projektu.
           </p>
         </li>
 
@@ -47,9 +46,9 @@ export const ListStages = () => {
           <FaHouse className={styles['list__icon']} />
           <h3 className={styles['item__heading']}>Realizacja</h3>
           <p className={styles['item__text']}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            imperdiet, erat id porttitor pellentesque, magna velit facilisis
-            ante, et auctor enim nunc non nunc.
+            W etapie realizacji przechodzimy od koncepcji do rzeczywistości.
+            Nasz zespół wykwalifikowanych specjalistów nadzoruje każdy aspekt
+            projektu.
           </p>
         </li>
       </ul>

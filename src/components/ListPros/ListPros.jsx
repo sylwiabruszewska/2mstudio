@@ -6,9 +6,6 @@ import styles from './ListPros.module.scss';
 
 export const ListPros = () => {
   const start = 0;
-  const end1 = 374;
-  const end2 = 254;
-  const end3 = 743;
   const duration = 2.5;
 
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +30,7 @@ export const ListPros = () => {
           <CountUp
             className={styles['pros-list__block']}
             start={start}
-            end={end1}
+            end={15}
             duration={duration}
           />
         )}
@@ -45,7 +42,7 @@ export const ListPros = () => {
           <CountUp
             className={styles['pros-list__block']}
             start={start}
-            end={end2}
+            end={346}
             duration={duration}
           />
         )}
@@ -59,7 +56,7 @@ export const ListPros = () => {
           <CountUp
             className={styles['pros-list__block']}
             start={start}
-            end={end3}
+            end={35}
             duration={duration}
           />
         )}
