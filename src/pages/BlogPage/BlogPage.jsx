@@ -36,12 +36,14 @@ const BlogPage = () => {
   const goToNextPage = () => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
+    ScrollToTop();
     updateURL(nextPage);
   };
 
   const goToPrevPage = () => {
     const prevPage = currentPage - 1;
     setCurrentPage(prevPage);
+    ScrollToTop();
     updateURL(prevPage);
   };
 
@@ -52,6 +54,14 @@ const BlogPage = () => {
       location.pathname
     }?${queryParams.toString()}`;
     window.history.pushState({}, '', newURL);
+  };
+
+  const ScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
