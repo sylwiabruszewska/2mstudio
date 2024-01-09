@@ -12,8 +12,8 @@ export const Address = ({ contain }) => {
     },
     email: {
       icon: <FaEnvelope className={styles.icon} />,
-      text: 'marczak@2mstudio.org.pl',
-      link: 'mailto:marczak@2mstudio.org.pl',
+      text: '2mstudio@2mstudio.org.pl',
+      link: 'mailto:2mstudio@2mstudio.org.pl',
     },
     location: {
       icon: <FaHome className={styles.icon} />,
