@@ -26,8 +26,7 @@
   }
 }
 
-///// BUTTONS /////
-.btn-group {
+.link-group {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -37,28 +36,5 @@
   @include mixins.mq(tablet) {
     flex-direction: row;
     justify-content: center;
-  }
-}
-
-.btn-iso {
-  padding: 5px 20px;
-  cursor: pointer;
-
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-
-  height: 40px;
-  width: fit-content;
-  background-color: transparent;
-  border: none;
-  color: get-color('dark');
-
-  &:not(:last-child) {
-    margin-right: 10px;
-  }
-
-  &:hover {
-    font-weight: 600;
   }
 }

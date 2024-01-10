@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet';
 import { Suspense, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
 
 import { Container, BackLink } from 'components';
 import styles from './PortfolioPage.module.scss';
+import { StyledLink } from './PortoflioPage.styled';
 
 const PortfolioPage = () => {
   const navigate = useNavigate();
@@ -29,26 +29,16 @@ const PortfolioPage = () => {
       </Helmet>
 
       <Container>
-        <div className={styles['btn-group']}>
-          <Link to="wszystkie">
-            <button className={styles['btn-iso']}>Wszystkie projekty</button>
-          </Link>
+        <div className={styles['link-group']}>
+          <StyledLink to="wszystkie">Wszystkie projekty</StyledLink>
 
-          <Link to="wnetrza">
-            <button className={styles['btn-iso']}>Wnętrza</button>
-          </Link>
+          <StyledLink to="wnetrza">Wnętrza</StyledLink>
 
-          <Link to="budynki-mieszkalne">
-            <button className={styles['btn-iso']}>Budynki mieszkalne</button>
-          </Link>
+          <StyledLink to="budynki-mieszkalne">Budynki mieszkalne</StyledLink>
 
-          <Link to="budynki-uslugowe">
-            <button className={styles['btn-iso']}>Budynki usługowe</button>
-          </Link>
+          <StyledLink to="budynki-uslugowe">Budynki usługowe</StyledLink>
 
-          <Link to="budynki-przemyslowe">
-            <button className={styles['btn-iso']}>Budynki przemysłowe</button>
-          </Link>
+          <StyledLink to="budynki-przemyslowe">Budynki przemysłowe</StyledLink>
         </div>
 
         <Suspense>
