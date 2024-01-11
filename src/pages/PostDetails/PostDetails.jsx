@@ -1,29 +1,32 @@
 import { Helmet } from 'react-helmet';
 import { Section, Container } from 'components';
 import parse from 'html-react-parser';
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useQuery } from 'react-query';
 
 import { getPost } from 'services/api';
 import styles from './PostDetails.module.scss';
-import { BackLink, AnimatedRoute } from 'components';
+import { BackLink, AnimatedRoute, Loader } from 'components';
 
 const PostDetails = () => {
   const { postId } = useParams();
-  const [post, setPost] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getPost(postId);
-        setPost(data);
-      } catch (error) {
-        console.error('Error fetching post:', error);
-      }
-    };
+  const {
+    data: post,
+    isLoading,
+    isError,
+  } = useQuery('blogPost', () => {
+    const postData = getPost(postId);
+    return postData;
+  });
 
-    fetchData();
-  }, [postId]);
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return <p>Wystąpił błąd, spróbuj odświeżyć stronę.</p>;
+  }
 
   return (
     <>
