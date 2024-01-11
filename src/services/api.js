@@ -146,7 +146,7 @@ export const getAboutUsInfo = async () => {
   if (data && data.content && data.content.rendered) {
     return data.content.rendered;
   } else {
-    throw new Error('Nie można pobrać zawartości strony O nas.');
+    throw new Error('There was a problem fetching the data.');
   }
 };
 
