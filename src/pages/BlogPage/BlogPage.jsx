@@ -40,10 +40,10 @@ const BlogPage = () => {
     updateURL(nextPage);
   };
 
-  const goToPrevPage = () => {
+  const goToPrevPage = event => {
+    event.preventDefault();
     const prevPage = currentPage - 1;
     setCurrentPage(prevPage);
-    ScrollToTop();
     updateURL(prevPage);
   };
 
