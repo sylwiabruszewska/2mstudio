@@ -47,7 +47,7 @@ export const ListPros = () => {
           />
         )}
         <span className={styles['pros-list__text']}>
-          zaprojektowanych wnętrz
+          zrealizowanych projektów
         </span>
       </li>
       <li className={styles['pros-list__item']}>
@@ -56,11 +56,13 @@ export const ListPros = () => {
           <CountUp
             className={styles['pros-list__block']}
             start={start}
-            end={35}
+            end={12}
             duration={duration}
           />
         )}
-        <span className={styles['pros-list__text']}>coś fajnego waszego</span>
+        <span className={styles['pros-list__text']}>
+          projektów wyróżnionych w publikacjach branżowych
+        </span>
       </li>
     </ul>
   );
