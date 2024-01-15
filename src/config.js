@@ -10,4 +10,5 @@ export const API_PATHS = {
   portoflioBuildingsCommercial: 'posts?categories=19',
   media: 'media/',
   aboutUs: 'pages/112',
+  offer: 'pages/342',
 };

@@ -150,6 +150,16 @@ export const getAboutUsInfo = async () => {
   }
 };
 
+// fetch data for a subpage - Offer
+export const getOfferData = async () => {
+  const data = await fetchData(API_PATHS.offer);
+  if (data && data.content && data.content.rendered) {
+    return data.content.rendered;
+  } else {
+    throw new Error('There was a problem fetching the data.');
+  }
+};
+
 // fetch images for projects, blog posts
 export const fetchImages = async mediaId => {
   try {
