@@ -15,7 +15,7 @@ const PostDetails = () => {
     data: post,
     isLoading,
     isError,
-  } = useQuery('blogPost', () => {
+  } = useQuery(`blogPost${postId}`, () => {
     const postData = getPost(postId);
     return postData;
   });
