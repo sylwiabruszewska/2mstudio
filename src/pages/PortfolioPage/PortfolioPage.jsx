@@ -44,8 +44,6 @@ const PortfolioPage = () => {
         <Suspense>
           <Outlet />
         </Suspense>
-
-        <BackLink />
       </Container>
     </>
   );
