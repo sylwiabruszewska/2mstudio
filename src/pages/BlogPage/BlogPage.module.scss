@@ -107,14 +107,17 @@
 
 .btn-group {
   @include mixins.flex(space-between, center);
-  padding: 1em 0;
 
   & .btn-pag {
-    background-color: get-color('light');
+    background-color: transparent;
+    box-shadow: none;
     color: get-color('dark');
+    text-decoration: none;
+    margin: 2rem 0;
+    font-weight: 500;
 
     &:hover {
-      color: get-color('primary');
+      text-decoration: underline;
     }
   }
 }
