@@ -48,8 +48,8 @@ export const ContactForm = () => {
       .max(20, 'Numer telefonu może zawierać maksymalnie 20 cyfr'),
     message: Yup.string()
       .matches(
-        /^[A-Za-z0-9ąćęłńóśźżĄĆĘŁŃÓŚŹŻ .-]+$/,
-        'Wiadomość może zawierać wyłącznie litery, cyfry i znaki.'
+        /^[A-Za-z0-9ąćęłńóśźżĄĆĘŁŃÓŚŹŻ .,\-+=]+$/,
+        'Wiadomość może zawierać od 50 do 500 znaków, tylko litery, cyfry i znaki specjalne'
       )
       .min(50, 'Wiadomość musi zawierać co najmniej 50 znaków.')
       .max(500, 'Wiadomość może zawierać maksymalnie 500 znaków.')
