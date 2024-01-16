@@ -77,6 +77,7 @@ export const Header = () => {
           className={styles['menu-toggle']}
           aria-expanded="false"
           aria-controls="mobile-menu"
+          aria-label="menu mobilne"
           onClick={toggleMobileMenu}
         >
           <AiOutlineMenu className={styles['menu-toggle__icon']} />
