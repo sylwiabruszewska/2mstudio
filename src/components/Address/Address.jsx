@@ -29,17 +29,15 @@ export const Address = ({ contain }) => {
       <ul className={styles['address__list']}>
         {displayOptions.map(option => (
           <li key={option} className={styles['address__item']}>
-            <div className={styles['list__content']}>
-              {addressOptions[option].icon}
-              <a
-                className={styles['address__link']}
-                href={addressOptions[option].link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {addressOptions[option].text}
-              </a>
-            </div>
+            {addressOptions[option].icon}
+            <a
+              className={styles['address__link']}
+              href={addressOptions[option].link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {addressOptions[option].text}
+            </a>
           </li>
         ))}
       </ul>

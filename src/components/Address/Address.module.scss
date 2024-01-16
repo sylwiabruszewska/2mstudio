@@ -4,6 +4,7 @@
 .address__list {
   @include mixins.flex(flex-start, center);
   flex-direction: column;
+  min-height: 100px;
 
   @include mixins.mq(tablet) {
     align-items: flex-start;
@@ -25,10 +26,6 @@
 .list {
   &__content {
     @include mixins.flex(flex-start, center);
-  }
-
-  &__item:not(:last-child) {
-    margin-bottom: 10px;
   }
 }
 
