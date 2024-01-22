@@ -4,10 +4,10 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import styles from './SliderPortfolio.module.scss';
 import { MdArrowForwardIos, MdOutlineArrowBackIos } from 'react-icons/md';
-import image1 from '../../assets/images/slider/img1.jpg';
-import image2 from '../../assets/images/slider/img2.jpg';
-import image3 from '../../assets/images/slider/img3.jpg';
-import image4 from '../../assets/images/slider/img4.jpg';
+import image1 from '../../assets/images/slider/img1.webp';
+import image2 from '../../assets/images/slider/img2.webp';
+import image3 from '../../assets/images/slider/img3.webp';
+import image4 from '../../assets/images/slider/img4.webp';
 
 export const SliderPortfolio = () => {
   const PrevArrow = ({ onClick }) => (

@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 import styles from './AboutUsPage.module.scss';
 import { Section, Container, BackLink, Loader } from 'components';
 import { getAboutUsInfo } from '../../services/api';
-import photo from '../../assets/images/staff.jpg';
+import photo from '../../assets/images/staff.webp';
 
 const AboutUsPage = () => {
   const { data, isLoading, isError } = useQuery('aboutUsInfo', getAboutUsInfo);

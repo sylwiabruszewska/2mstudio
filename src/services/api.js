@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { BASE_URL, API_PATHS } from '../config.js';
 
-import defaultImage from '../assets/images/photo-home.jpg';
+import defaultImage from '../assets/images/photo-home.webp';
 
 const instance = axios.create({
   baseURL: BASE_URL,

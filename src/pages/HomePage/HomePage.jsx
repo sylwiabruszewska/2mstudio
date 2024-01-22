@@ -9,7 +9,7 @@ import {
   ListStages,
   ListTrust,
 } from 'components';
-import photo from 'assets/images/photo-home.jpg';
+import photo from 'assets/images/photo-home.webp';
 
 const Home = () => {
   return (
