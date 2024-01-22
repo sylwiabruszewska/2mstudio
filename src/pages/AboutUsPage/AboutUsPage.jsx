@@ -26,7 +26,12 @@ const AboutUsPage = () => {
 
       <Section>
         <Container className={styles['about__container']}>
-          <img src={photo} className={styles['img']} alt="Nasz zespół" />
+          <img
+            src={photo}
+            className={styles['img']}
+            alt="Nasz zespół"
+            loading="lazy"
+          />
           <p className={styles['text']}>
             Naszą pracownię tworzą architekci: Marcin, Julia, Adam, Ewa i Tomek.
             Każda osoba w naszym zespole wnosi unikalne spojrzenie i

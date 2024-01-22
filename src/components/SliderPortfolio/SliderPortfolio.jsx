@@ -40,6 +40,7 @@ export const SliderPortfolio = () => {
           src={image1}
           className={styles['slider-img']}
           alt="Opis obrazka 1"
+          loading="lazy"
         />
       </div>
       <div>
@@ -47,6 +48,7 @@ export const SliderPortfolio = () => {
           src={image2}
           className={styles['slider-img']}
           alt="Opis obrazka 2"
+          loading="lazy"
         />
       </div>
       <div>
@@ -54,6 +56,7 @@ export const SliderPortfolio = () => {
           src={image3}
           className={styles['slider-img']}
           alt="Opis obrazka 3"
+          loading="lazy"
         />
       </div>
       <div>
@@ -61,6 +64,7 @@ export const SliderPortfolio = () => {
           src={image4}
           className={styles['slider-img']}
           alt="Opis obrazka 4"
+          loading="lazy"
         />
       </div>
     </Slider>

@@ -45,7 +45,12 @@ const Home = () => {
             </p>
           </div>
           <div className={styles['about__images']}>
-            <img className={styles['about__img']} src={photo} alt="" />
+            <img
+              className={styles['about__img']}
+              src={photo}
+              alt="Aneks kuchenny w nowoczesnym stylu"
+              loading="lazy"
+            />
           </div>
         </div>
 

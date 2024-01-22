@@ -101,6 +101,7 @@ const BlogPage = () => {
                           src={post.img}
                           alt={post.title}
                           className={styles['post-img']}
+                          loading="lazy"
                         />
 
                         <div className={styles['box']}>zobacz post</div>
