@@ -160,6 +160,16 @@ export const getOfferData = async () => {
   }
 };
 
+// fetch data for a subpage - Privacy Policy
+export const getPrivacyData = async () => {
+  const data = await fetchData(API_PATHS.privacy);
+  if (data && data.content && data.content.rendered) {
+    return data.content.rendered;
+  } else {
+    throw new Error('There was a problem fetching the data.');
+  }
+};
+
 // fetch images for projects, blog posts
 export const fetchImages = async mediaId => {
   try {

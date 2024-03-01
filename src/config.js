@@ -11,4 +11,5 @@ export const API_PATHS = {
   media: 'media/',
   aboutUs: 'pages/112',
   offer: 'pages/342',
+  privacy: 'pages/3',
 };
