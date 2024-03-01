@@ -21,6 +21,9 @@ const BuildingsCommercial = lazy(() =>
 const BlogPage = lazy(() => import('pages/BlogPage/BlogPage'));
 const PostDetails = lazy(() => import('pages/PostDetails/PostDetails'));
 const ContactPage = lazy(() => import('pages/ContactPage/ContactPage'));
+const PrivacyPolicyPage = lazy(() =>
+  import('pages/PrivacyPolicyPage/PrivacyPolicyPage')
+);
 const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
@@ -46,6 +49,7 @@ export const App = () => {
         <Route path="/:postId" element={<PostDetails />} />
 
         <Route path="kontakt" element={<ContactPage />} />
+        <Route path="polityka-prywatnosci" element={<PrivacyPolicyPage />} />
 
         {/* Obsługa trasy "nieznalezionej" */}
         <Route path="*" element={<NotFoundPage />} />
