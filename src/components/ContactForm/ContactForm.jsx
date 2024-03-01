@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { Link } from 'react-router-dom';
 
 import styles from './ContactForm.module.scss';
 import { Button } from 'components';
@@ -150,8 +151,15 @@ export const ContactForm = () => {
                   <span className={styles['checkbox-text']}>
                     Zgadzam się na wykorzystanie moich danych osobowych przez
                     firmę 2M STUDIO Pracownia Projektowa w celu skontaktowania
-                    się ze mną i udzielenia odpowiedzi na moje zapytanie.
+                    się ze mną i udzielenia odpowiedzi na moje zapytanie.{' '}
+                    <Link
+                      to="/polityka-prywatnosci"
+                      aria-label="polityka prywatności"
+                    >
+                      Polityka Prywatności
+                    </Link>
                   </span>
+
                   <ErrorMessage
                     name="consent"
                     component="div"
