@@ -32,7 +32,7 @@
   @include mixins.flex(center, center);
   flex-direction: column;
 
-  @include mixins.mq(tablet) {
+  @include mixins.mq(desktop) {
     @include mixins.flex(flex-start, flex-start);
     max-width: 40%;
   }
@@ -40,6 +40,7 @@
 
 .logo {
   height: 50px;
+  width: 200px;
 }
 
 .copyright {

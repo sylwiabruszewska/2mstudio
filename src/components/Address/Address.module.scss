@@ -6,7 +6,7 @@
   flex-direction: column;
   min-height: 100px;
 
-  @include mixins.mq(tablet) {
+  @include mixins.mq(desktop) {
     align-items: flex-start;
   }
 }
