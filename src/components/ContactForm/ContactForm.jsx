@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { object, string, boolean } from 'yup';
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Link } from 'react-router-dom';
@@ -35,19 +35,19 @@ export const ContactForm = () => {
     }
   };
 
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
+  const validationSchema = object().shape({
+    name: string()
       .matches(/^[A-Za-ząćęłńóśźż ]+$/, 'Imię może zawierać wyłącznie litery')
       .max(30, 'Imię może zawierać maksymalnie 30 znaków')
       .required('Imię jest wymagane'),
-    email: Yup.string()
+    email: string()
       .email('Niepoprawny format adresu email')
       .required('Adres email jest wymagany')
       .max(30, 'Adres email może zawierać maksymalnie 30 znaków'),
-    phone: Yup.string()
+    phone: string()
       .matches(/^[0-9]*$/, 'Numer telefonu może zawierać wyłącznie cyfry')
       .max(20, 'Numer telefonu może zawierać maksymalnie 20 cyfr'),
-    message: Yup.string()
+    message: string()
       .matches(
         /^[A-Za-z0-9ąćęłńóśźżĄĆĘŁŃÓŚŹŻ .,\-+=]+$/,
         'Wiadomość może zawierać od 50 do 500 znaków, tylko litery, cyfry i znaki specjalne'
@@ -55,7 +55,7 @@ export const ContactForm = () => {
       .min(50, 'Wiadomość musi zawierać co najmniej 50 znaków.')
       .max(500, 'Wiadomość może zawierać maksymalnie 500 znaków.')
       .required('Wiadomość jest wymagana.'),
-    consent: Yup.boolean()
+    consent: boolean()
       .oneOf([true], 'Zgoda na przetwarzanie danych jest wymagana')
       .required('Zgoda na przetwarzanie danych jest wymagana'),
   });
