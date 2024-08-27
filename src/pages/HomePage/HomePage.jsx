@@ -9,7 +9,9 @@ import {
   ListStages,
   ListTrust,
 } from 'components';
-import photo from 'assets/images/photo-home.webp';
+import photo from 'assets/images/photo-home.jpg';
+import photoMd from 'assets/images/photo-home-medium.webp';
+import photoSm from 'assets/images/photo-home-small.webp';
 
 const Home = () => {
   return (
@@ -27,27 +29,24 @@ const Home = () => {
               2M STUDIO Pracownia Projektowa
             </h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque non urna eleifend, interdum tellus luctus, molestie
-              neque. Nam tincidunt nunc odio, ac ullamcorper elit pretium nec.
-              Sed mollis, eros at lobortis blandit, elit arcu tempus lectus, at
-              posuere turpis massa in lacus. Integer turpis mauris, finibus
-              fermentum elementum porttitor, sagittis non ligula. Nulla
-              facilisi. Duis neque mauris, consectetur at mi et, porta euismod
-              quam. In id tellus vestibulum nisi pharetra dapibus sed in augue.
-              Orci varius natoque penatibus et magnis dis parturient montes,
-              nascetur ridiculus mus. Sed suscipit tellus mi, vitae facilisis
-              nulla placerat eu. Nullam snon dignissim lectus, et eleifend arcu.
-              In lacinia lacinia magna. Mauris ac vulputate erat. Mauris vitae
-              dui vestibulum, semper ex in, luctus sem. Sed orci leo, fringilla
-              sit amet ultrices id, aliquam nec ipsum. Vivamus fermentum dui
-              lobortis aliquet vestibulum.
+              Nasze biuro projektowe specjalizuje się w tworzeniu nowoczesnych i
+              funkcjonalnych przestrzeni, które łączą estetykę z praktycznością.
+              Z pasją podchodzimy do każdego projektu, dbając o każdy detal, aby
+              sprostać oczekiwaniom naszych klientów. Projektujemy wnętrza
+              prywatne oraz komercyjne, uwzględniając najnowsze trendy i
+              indywidualne potrzeby użytkowników. Naszym celem jest kreowanie
+              przestrzeni, które nie tylko cieszą oko, ale także podnoszą
+              komfort życia i pracy. Zespół doświadczonych architektów i
+              projektantów wnętrz pracuje z zaangażowaniem, aby każde zlecenie
+              było unikalne i dopasowane do wizji klienta.
             </p>
           </div>
           <div className={styles['about__images']}>
             <img
-              className={styles['about__img']}
               src={photo}
+              srcSet={`${photoSm} 300w, ${photoMd} 768w`}
+              sizes="100vw"
+              className={styles['about__img']}
               alt="Aneks kuchenny w nowoczesnym stylu"
               loading="lazy"
             />
