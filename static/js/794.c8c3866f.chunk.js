@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunk_2mstudio=self.webpackChunk_2mstudio||[]).push([[794],{1794:(e,n,s)=>{s.r(n),s.d(n,{default:()=>t});var i=s(4270),r=s(184);const t=()=>(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(i.q,{children:(0,r.jsx)("title",{children:"2M STUDIO Pracownia Projektowa - Strony nie znaleziono"})}),(0,r.jsx)("p",{children:"404 - Ups! Strony nie znaleziono"}),(0,r.jsx)("p",{children:"Strona, kt\xf3rej szukasz nie istnieje."})]})}}]);
-//# sourceMappingURL=794.c8c3866f.chunk.js.map
